@@ -18,12 +18,14 @@ public class DestructibleItems : MonoBehaviour
         if(other.gameObject.CompareTag("Bullet"))
         {
             ItemHealth--;
-            if(ItemHealth == 0)
-            {
-                Destroy(GetComponent<Collider2D>());
-                spriteRenderer.sprite = DestroyedSprite;
-            }
         }
-        
+    }
+    void Update()
+    {
+        if(ItemHealth <= 0)
+        {
+            Destroy(GetComponent<Collider2D>());
+            spriteRenderer.sprite = DestroyedSprite;
+        }
     }
 }
