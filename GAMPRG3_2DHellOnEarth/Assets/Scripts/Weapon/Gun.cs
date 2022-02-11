@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    public float offset;
+    private float Offset = -90;
     public Transform shotPos;
     public GameObject bullet;
     public int amountOfBullets;
@@ -22,7 +22,7 @@ public class Gun : MonoBehaviour
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle + offset, Vector3.forward);
+        transform.rotation = Quaternion.AngleAxis(angle + Offset, Vector3.forward);
         if(Input.GetMouseButtonDown(0))
         {
             if(Cooldown == false)
