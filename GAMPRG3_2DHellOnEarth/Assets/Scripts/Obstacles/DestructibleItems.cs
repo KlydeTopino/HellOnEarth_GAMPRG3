@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class DestructibleItems : MonoBehaviour
 {
-    public int ItemHealth;
+    public int itemHealth;
     public SpriteRenderer spriteRenderer;
-    public Sprite DestroyedSprite;
+    public Sprite destroyedSprite;
 
     void Start()
     {
@@ -17,15 +17,15 @@ public class DestructibleItems : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Bullet"))
         {
-            ItemHealth--;
+            itemHealth--;
         }
     }
     void Update()
     {
-        if(ItemHealth <= 0)
+        if(itemHealth <= 0)
         {
             Destroy(GetComponent<Collider2D>());
-            spriteRenderer.sprite = DestroyedSprite;
+            spriteRenderer.sprite = destroyedSprite;
         }
     }
 }
