@@ -11,11 +11,12 @@ public class RandomSpawner : MonoBehaviour
 
     void Update()
     {
-        while (SpawnCount < MaxSpawnCount)
-        {
+       while (SpawnCount < MaxSpawnCount)
+       {
             Vector3 randomPos = Random.insideUnitCircle * Radius;
             Instantiate(obstacles[UnityEngine.Random.Range(0, obstacles.Count)], randomPos, Quaternion.identity);
-        }
+            SpawnCount++;
+       }
         
     }
 
