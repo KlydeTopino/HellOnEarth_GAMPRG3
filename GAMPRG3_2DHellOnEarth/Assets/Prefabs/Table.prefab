@@ -123,6 +123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2305ffadfebb9a4c9dd39e8abb079b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemHealth: 5
+  itemHealth: 100
   spriteRenderer: {fileID: 0}
   destroyedSprite: {fileID: 21300000, guid: 58655ca7ddfabc74b925aac62c4a6c22, type: 3}

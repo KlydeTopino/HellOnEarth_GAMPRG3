@@ -13,19 +13,22 @@ public class DestructibleItems : MonoBehaviour
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
-    public void OnCollisionEnter2D(Collision2D other)
+    public void TakeDamage(int damage)
     {
-        if(other.gameObject.CompareTag("Bullet"))
+        itemHealth -= damage;
+        if (itemHealth <= 0)
         {
-            itemHealth--;
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        Destroy(GetComponent<Collider2D>());
+        spriteRenderer.sprite = destroyedSprite;
     }
     void Update()
     {
-        if(itemHealth <= 0)
-        {
-            Destroy(GetComponent<Collider2D>());
-            spriteRenderer.sprite = destroyedSprite;
-        }
+        
     }
 }
