@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Countdown
+  m_Name: countdown animation
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -113,7 +113,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Canvas/CountDown/3
+    path: Canvas/Countdown/3
     classID: 1
     script: {fileID: 0}
   - curve:
@@ -150,7 +150,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Canvas/CountDown/2
+    path: Canvas/Countdown/2
     classID: 1
     script: {fileID: 0}
   - curve:
@@ -187,7 +187,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Canvas/CountDown/1
+    path: Canvas/Countdown/1
     classID: 1
     script: {fileID: 0}
   - curve:
@@ -224,7 +224,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Canvas/CountDown/Start
+    path: Canvas/Countdown/Go
     classID: 1
     script: {fileID: 0}
   m_PPtrCurves: []
@@ -250,28 +250,28 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 479059526
+      path: 455203696
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1804267216
+      path: 1814490086
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 4068720490
+      path: 4113545820
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 4229641550
+      path: 339902289
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
@@ -472,7 +472,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Canvas/CountDown/3
+    path: Canvas/Countdown/3
     classID: 1
     script: {fileID: 0}
   - curve:
@@ -509,7 +509,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Canvas/CountDown/2
+    path: Canvas/Countdown/2
     classID: 1
     script: {fileID: 0}
   - curve:
@@ -546,7 +546,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Canvas/CountDown/1
+    path: Canvas/Countdown/1
     classID: 1
     script: {fileID: 0}
   - curve:
@@ -583,7 +583,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Canvas/CountDown/Start
+    path: Canvas/Countdown/Go
     classID: 1
     script: {fileID: 0}
   m_EulerEditorCurves: []

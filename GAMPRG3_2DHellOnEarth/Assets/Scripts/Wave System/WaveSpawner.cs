@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 [System.Serializable]
 
 public class Wave
@@ -42,7 +43,7 @@ public class WaveSpawner : MonoBehaviour
                 if (WillAnimate)
                 {
                     WaveName.text = WavesNumber[CurrentWaveNumber + 1].WaveName;
-                    WaveAnimator.SetTrigger("Wave Complete");
+                    WaveAnimator.SetTrigger("WaveComplete");
                     WillAnimate = false;
                 }
             }
@@ -78,7 +79,5 @@ public class WaveSpawner : MonoBehaviour
                 WillSpawn = false;
             }
         }
-        
-       
     }
 }
