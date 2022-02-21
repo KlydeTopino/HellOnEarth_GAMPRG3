@@ -13,7 +13,12 @@ GameObject:
   - component: {fileID: 8614596404540789886}
   - component: {fileID: 5824200691799949664}
   - component: {fileID: 7145565073849070256}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  - component: {fileID: 5959016553176237597}
+  m_Layer: 3
+>>>>>>> Stashed changes
   m_Name: Bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -74,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 0ea86284f8fc77644af67f55dddfb6ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
