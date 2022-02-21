@@ -10,14 +10,16 @@ public class PlayerScript : MonoBehaviour
 
     public ContactFilter2D MovementFilter;
     
-    Vector2 MovementInput;
+    public Vector2 MovementInput;
     Rigidbody2D rb;
+    MovementAnimation movementAnimationScript;
 
     List<RaycastHit2D> CastCollision = new List<RaycastHit2D>();
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        movementAnimationScript = gameObject.GetComponent<MovementAnimation>();
     }
 
     private void FixedUpdate()
@@ -36,7 +38,6 @@ public class PlayerScript : MonoBehaviour
                 }
             }
         }
-        
     }
 
     private bool TryMove(Vector2 direction)

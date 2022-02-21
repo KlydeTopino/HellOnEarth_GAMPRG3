@@ -25,11 +25,11 @@ public class Knockback : MonoBehaviour
             Rigidbody2D enemy = other.GetComponent<Rigidbody2D>();
             if(enemy != null)
             {
-                Debug.Log("im working btw");
                 Vector2 difference = (enemy.transform.position - transform.position);
                 difference = difference.normalized * thrust;
                 enemy.AddForce(difference, ForceMode2D.Impulse);
                 StartCoroutine(KnockCo(enemy));
+                Debug.Log("im working btw");
             }
         }
     }
@@ -39,7 +39,10 @@ public class Knockback : MonoBehaviour
         if(enemy != null)
         {
             yield return new WaitForSeconds(knockTime);
-            enemy.velocity = Vector2.zero;
+            Vector2 difference = (enemy.transform.position - transform.position);
+            difference = difference.normalized * thrust;
+            enemy.velocity = difference * thrust;
+            Debug.Log("working");
         }
     }
 }
