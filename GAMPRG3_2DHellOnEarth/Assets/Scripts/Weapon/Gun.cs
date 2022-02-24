@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class Gun : MonoBehaviour
 
     bool shooting, readyToShoot, reloading;
     public bool allowAutoFire;
+
+    public GameObject ReloadHud;
+    public Text AmmoDisplay; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,8 +40,11 @@ public class Gun : MonoBehaviour
         if(allowAutoFire) shooting = Input.GetKey(KeyCode.Mouse0);
         else shooting = Input.GetKeyDown(KeyCode.Mouse0);
 
-        if(Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSize && !reloading) Reload();
-
+        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSize && !reloading)
+        {
+           Reload();
+        }
+        
         if (readyToShoot && shooting && !reloading && bulletsLeft > 0)
         {
             bulletsShot = bulletsPerTap;
@@ -46,6 +54,8 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
+        AmmoDisplay.text = bulletsLeft.ToString();
+
         readyToShoot = false;
         {
             GameObject b = Instantiate(bullet, shotPos.position, shotPos.rotation);
