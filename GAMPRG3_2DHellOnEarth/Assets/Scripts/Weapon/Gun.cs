@@ -15,8 +15,10 @@ public class Gun : MonoBehaviour
     bool shooting, readyToShoot, reloading;
     public bool allowAutoFire;
 
-    public GameObject ReloadHud;
-    public Text AmmoDisplay; 
+    
+    public Text AmmoDisplay;
+    public Text ReloadText;
+    private bool IsReloading;
 
     // Start is called before the first frame update
     void Start()
@@ -40,9 +42,15 @@ public class Gun : MonoBehaviour
         if(allowAutoFire) shooting = Input.GetKey(KeyCode.Mouse0);
         else shooting = Input.GetKeyDown(KeyCode.Mouse0);
 
-        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSize && !reloading)
+        if (bulletsLeft < magazineSize && !reloading && IsReloading)
         {
-           Reload();
+            ReloadText.gameObject.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Reload();
+                ReloadText.gameObject.SetActive(false);
+            }
+          
         }
         
         if (readyToShoot && shooting && !reloading && bulletsLeft > 0)

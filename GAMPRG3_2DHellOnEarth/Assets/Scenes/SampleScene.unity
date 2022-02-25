@@ -344,15 +344,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WavesNumber:
   - WaveName: Wave 1
-    EnemyCounter: 3
+    EnemyCounter: 1
     EnemyTypes:
     - {fileID: 793472791}
-    SpawnInterval: 2
+    - {fileID: 793472791}
+    SpawnInterval: 0
   - WaveName: Wave 2
-    EnemyCounter: 5
-    EnemyTypes:
-    - {fileID: 0}
-    SpawnInterval: 3
+    EnemyCounter: 0
+    EnemyTypes: []
+    SpawnInterval: 0
   - WaveName: Wave 3
     EnemyCounter: 0
     EnemyTypes: []
@@ -4100,7 +4100,7 @@ GameObject:
   - component: {fileID: 540459352}
   - component: {fileID: 540459351}
   m_Layer: 5
-  m_Name: Text
+  m_Name: ReloadText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4122,7 +4122,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 252}
+  m_AnchoredPosition: {x: 0, y: 228}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &540459351
@@ -4511,9 +4511,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 540459349}
     - target: {fileID: 2931978472054207125, guid: df29c1c37d2918e4fb5f16e658c00b82, type: 3}
+      propertyPath: ReloadText
+      value: 
+      objectReference: {fileID: 540459351}
+    - target: {fileID: 2931978472054207125, guid: df29c1c37d2918e4fb5f16e658c00b82, type: 3}
       propertyPath: AmmoDisplay
       value: 
       objectReference: {fileID: 2124233134}
+    - target: {fileID: 7184674850153689849, guid: df29c1c37d2918e4fb5f16e658c00b82, type: 3}
+      propertyPath: pickUpText
+      value: 
+      objectReference: {fileID: 841476239}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df29c1c37d2918e4fb5f16e658c00b82, type: 3}
 --- !u!1 &719982739
@@ -5017,6 +5025,85 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6779429374633169556, guid: 579db5bc9b7122d4db0e4d881663f0c5, type: 3}
   m_PrefabInstance: {fileID: 830883249}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &841476238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 841476241}
+  - component: {fileID: 841476240}
+  - component: {fileID: 841476239}
+  m_Layer: 5
+  m_Name: PickUp Gun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &841476239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841476238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 05c534f1187a94d498ec4c3a00a7607f, type: 3}
+    m_FontSize: 40
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: PRESS "E" TO PICK UP GUN
+--- !u!222 &841476240
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841476238}
+  m_CullTransparentMesh: 1
+--- !u!224 &841476241
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841476238}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1046489153}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 19.8, y: 236}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &852066876 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7899506929430541166, guid: ea10c107f9f7b774ebb61a171930df0d, type: 3}
@@ -5432,6 +5519,7 @@ RectTransform:
   - {fileID: 900833542}
   - {fileID: 719982740}
   - {fileID: 540459350}
+  - {fileID: 841476241}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6188,6 +6276,10 @@ PrefabInstance:
       propertyPath: equipped
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1063613050889625344, guid: c194cb92d36e7984fae32a832fe38c75, type: 3}
+      propertyPath: pickUpText
+      value: 
+      objectReference: {fileID: 841476239}
     - target: {fileID: 5028228543105671020, guid: c194cb92d36e7984fae32a832fe38c75, type: 3}
       propertyPath: bullet
       value: 
@@ -6197,12 +6289,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 540459349}
     - target: {fileID: 5028228543105671020, guid: c194cb92d36e7984fae32a832fe38c75, type: 3}
+      propertyPath: ReloadText
+      value: 
+      objectReference: {fileID: 540459351}
+    - target: {fileID: 5028228543105671020, guid: c194cb92d36e7984fae32a832fe38c75, type: 3}
       propertyPath: AmmoDisplay
       value: 
       objectReference: {fileID: 2124233134}
     - target: {fileID: 5028228543105671020, guid: c194cb92d36e7984fae32a832fe38c75, type: 3}
       propertyPath: magazineSize
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7486831135070119152, guid: c194cb92d36e7984fae32a832fe38c75, type: 3}
       propertyPath: m_RootOrder
@@ -16494,6 +16590,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 367444693349535635, guid: b364d4889a4b61e41af57336167cf62e, type: 3}
+      propertyPath: pickUpText
+      value: 
+      objectReference: {fileID: 841476239}
     - target: {fileID: 5628374009717870591, guid: b364d4889a4b61e41af57336167cf62e, type: 3}
       propertyPath: bullet
       value: 
@@ -16502,6 +16602,10 @@ PrefabInstance:
       propertyPath: ReloadHud
       value: 
       objectReference: {fileID: 540459349}
+    - target: {fileID: 5628374009717870591, guid: b364d4889a4b61e41af57336167cf62e, type: 3}
+      propertyPath: ReloadText
+      value: 
+      objectReference: {fileID: 540459351}
     - target: {fileID: 5628374009717870591, guid: b364d4889a4b61e41af57336167cf62e, type: 3}
       propertyPath: AmmoDisplay
       value: 

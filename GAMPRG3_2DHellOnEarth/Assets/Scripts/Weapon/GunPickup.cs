@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GunPickup : MonoBehaviour
 {
@@ -15,9 +16,14 @@ public class GunPickup : MonoBehaviour
     public bool equipped;
     public static bool slotFull;
 
+    public Text pickUpText;
+    private bool pickUpAllowed;
+
     // Start is called before the first frame update
     void Start()
     {
+        pickUpText.gameObject.SetActive(false);
+
         player = GameObject.FindWithTag("Player").transform;
 
         if(!equipped)
@@ -40,7 +46,11 @@ public class GunPickup : MonoBehaviour
     void Update()
     {
         Vector2 distanceToPlayer = player.position - transform.position;
-        if(!equipped && distanceToPlayer.magnitude <= pickupRange && Input.GetKeyDown(KeyCode.E) && !slotFull) Pickup();
+        if(!equipped && distanceToPlayer.magnitude <= pickupRange && Input.GetKeyDown(KeyCode.E) && !slotFull && pickUpAllowed)
+        {
+            Pickup();
+            pickUpText.gameObject.SetActive(false);
+        }
 
         if(equipped && Input.GetKeyDown(KeyCode.G)) Drop();
         if(equipped)
@@ -71,5 +81,23 @@ public class GunPickup : MonoBehaviour
         gunScript.enabled = false;
 
         rb.AddForce(transform.up * dropForce);
+    }
+    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name.Equals("Player"))
+        {
+            pickUpText.gameObject.SetActive(true);
+            pickUpAllowed = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.name.Equals("Player"))
+        {
+            pickUpText.gameObject.SetActive(false);
+            pickUpAllowed = false;
+        }
     }
 }
