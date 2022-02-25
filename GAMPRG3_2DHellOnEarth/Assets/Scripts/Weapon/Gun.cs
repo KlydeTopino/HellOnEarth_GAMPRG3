@@ -42,15 +42,9 @@ public class Gun : MonoBehaviour
         if(allowAutoFire) shooting = Input.GetKey(KeyCode.Mouse0);
         else shooting = Input.GetKeyDown(KeyCode.Mouse0);
 
-        if (bulletsLeft < magazineSize && !reloading && IsReloading)
+        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSize && !reloading)
         {
-            ReloadText.gameObject.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                Reload();
-                ReloadText.gameObject.SetActive(false);
-            }
-          
+            Reload(); 
         }
         
         if (readyToShoot && shooting && !reloading && bulletsLeft > 0)
@@ -58,11 +52,19 @@ public class Gun : MonoBehaviour
             bulletsShot = bulletsPerTap;
             Shoot();
         }
+
+        if(bulletsLeft <= magazineSize / 10)
+        {
+            ReloadText.gameObject.SetActive(true);
+        }
+        else
+        {
+            ReloadText.gameObject.SetActive(false);
+        }
     }
 
     void Shoot()
     {
-        AmmoDisplay.text = bulletsLeft.ToString();
 
         readyToShoot = false;
         {
@@ -76,6 +78,7 @@ public class Gun : MonoBehaviour
         bulletsLeft--;
         bulletsShot--;
 
+        AmmoDisplay.text = bulletsLeft.ToString();
         Invoke("ResetShot", timeBetweenShooting);
 
         if(bulletsLeft > 0 && bulletsShot > 0)
