@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4133606640928190671}
   - component: {fileID: 4418068539508934264}
   - component: {fileID: 1720406133988669560}
+  - component: {fileID: -5917403290251364677}
   m_Layer: 0
   m_Name: Sofa
   m_TagString: Obstacle
@@ -110,3 +111,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.27440697, y: 0.15100214}
   m_EdgeRadius: 0
+--- !u!114 &-5917403290251364677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801052113573551410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2305ffadfebb9a4c9dd39e8abb079b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemHealth: 0
+  spriteRenderer: {fileID: 0}
+  destroyedSprite: {fileID: 0}
