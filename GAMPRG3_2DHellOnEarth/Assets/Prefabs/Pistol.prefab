@@ -133,13 +133,15 @@ MonoBehaviour:
   magazineSize: 10
   bulletsPerTap: 1
   shotPos: {fileID: 352143961392955872}
-  bullet: {fileID: 3110173560184843883, guid: f1bb037865a914c4d9ee7904e1f8a3d2, type: 3}
+  bullet: {fileID: 9097134232352499853, guid: f1bb037865a914c4d9ee7904e1f8a3d2, type: 3}
   spread: 0
   bulletSpeed: 2
   reloadTime: 2
   timeBetweenShots: 0
   timeBetweenShooting: 0.5
   allowAutoFire: 0
+  ReloadHud: {fileID: 0}
+  AmmoDisplay: {fileID: 0}
 --- !u!114 &1063613050889625344
 MonoBehaviour:
   m_ObjectHideFlags: 0
