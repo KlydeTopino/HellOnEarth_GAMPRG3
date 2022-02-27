@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [System.Serializable]
-
 public class Wave
 {
     public string WaveName;
@@ -15,8 +14,10 @@ public class Wave
 
 public class WaveSpawner : MonoBehaviour
 {
-    public Wave[] WavesNumber;
+    [SerializeField] public Wave[] WavesNumber;
     public Transform[] SpawnPoints;
+    public Animator WaveAnimator;
+    public Text WaveName;
 
     private Wave CurrentWave;
     private int CurrentWaveNumber;
@@ -25,25 +26,21 @@ public class WaveSpawner : MonoBehaviour
     private bool WillSpawn = true;
     private bool WillAnimate = false;
 
-
-    public Animator WaveAnimator;
-    public Text WaveName;
-
     // Update is called once per frame
     private void Update()
     {
         CurrentWave = WavesNumber[CurrentWaveNumber];
         SpawnWave();
-
         GameObject[] TotalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
         if (TotalEnemies.Length == 0)
         {
             if (CurrentWaveNumber + 1 != WavesNumber.Length)
             {
-                if (WillAnimate)
+                if ( WillAnimate)
                 {
                     WaveName.text = WavesNumber[CurrentWaveNumber + 1].WaveName;
                     WaveAnimator.SetTrigger("WaveComplete");
+                    Debug.Log("NextWave");
                     WillAnimate = false;
                 }
             }
@@ -60,8 +57,6 @@ public class WaveSpawner : MonoBehaviour
         CurrentWaveNumber++;
         WillSpawn = true;
     }
-
-
 
     void SpawnWave()
     {
