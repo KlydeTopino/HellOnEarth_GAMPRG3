@@ -24,6 +24,10 @@ public class Zombie : Enemy
     {
         isInAttackRange = Physics2D.OverlapCircle(transform.position, attackRadius, whatIsPlayer);
         isInChaseRange = Physics2D.OverlapCircle(transform.position, chaseRadius, whatIsPlayer);
+        if (health == 0)
+        {
+            Death();
+        }
     }
 
     // Update is called once per frame
@@ -51,6 +55,7 @@ public class Zombie : Enemy
         {
             Vector2 difference = transform.position - other.transform.position;
             transform.position = new Vector2(transform.position.x + difference.x, transform.position.y + difference.y);
+            health -= 50;
         }
     }
 
@@ -60,5 +65,10 @@ public class Zombie : Enemy
         Gizmos.DrawWireSphere(this.transform.position, attackRadius);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(this.transform.position, chaseRadius);
+    }
+
+    private void Death()
+    {
+        Destroy(gameObject);
     }
 }
