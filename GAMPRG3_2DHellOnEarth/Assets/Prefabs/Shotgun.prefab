@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1339523099376548757}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.566, y: -0.109, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7607900059715857433}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: bead43385639f0b459811f7d530cce36, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2e33f6e0449ca204dacd2438427d61d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,15 +103,16 @@ MonoBehaviour:
   magazineSize: 24
   bulletsPerTap: 6
   shotPos: {fileID: 7607900059715857433}
-  bullet: {fileID: 9097134232352499853, guid: f1bb037865a914c4d9ee7904e1f8a3d2, type: 3}
+  bullet: {fileID: 4285526353400491819, guid: 317a27839df4b5941bf9d71667016740, type: 3}
   spread: 0.5
   bulletSpeed: 1.5
   reloadTime: 3
   timeBetweenShots: 0
   timeBetweenShooting: 1
   allowAutoFire: 0
-  ReloadHud: {fileID: 0}
   AmmoDisplay: {fileID: 0}
+  ReloadText: {fileID: 0}
+  ReloadingText: {fileID: 0}
 --- !u!114 &7184674850153689849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,10 +128,13 @@ MonoBehaviour:
   gunScript: {fileID: 2931978472054207125}
   rb: {fileID: 4886626924041624033}
   coll: {fileID: 4101821934351301959}
-  player: {fileID: 0}
+  player: {fileID: 4969929711938934876, guid: ab7d73fabe0a333418d770362ba04a7a, type: 3}
+  bulletImage: {fileID: 0}
+  ammoDisplay: {fileID: 0}
   pickupRange: 0.2
   dropForce: 0
   equipped: 0
+  pickUpText: {fileID: 0}
 --- !u!50 &4886626924041624033
 Rigidbody2D:
   serializedVersion: 4
@@ -167,9 +171,9 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -0.0055465065, y: -0.001386622}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 0.108, y: 0.016, z: 0.09200001, w: 0.020000001}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 0.256, y: 0.256}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -202,7 +206,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1893432714171214443}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.05, z: 0}
+  m_LocalPosition: {x: -0.013, y: 0.104, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 761443253904558345}

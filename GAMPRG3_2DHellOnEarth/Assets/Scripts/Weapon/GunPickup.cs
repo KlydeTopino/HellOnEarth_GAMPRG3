@@ -9,6 +9,9 @@ public class GunPickup : MonoBehaviour
     public Rigidbody2D rb;
     public BoxCollider2D coll;
     public Transform player;
+    public Image bulletImage;
+    public Text ammoDisplay;
+    public Text reloadText;
 
     public float pickupRange;
     public float dropForce;
@@ -23,6 +26,7 @@ public class GunPickup : MonoBehaviour
     void Start()
     {
         pickUpText.gameObject.SetActive(false);
+        reloadText = gameObject.GetComponent<Gun>().reloadText;
 
         player = GameObject.FindWithTag("Player").transform;
 
@@ -31,6 +35,9 @@ public class GunPickup : MonoBehaviour
             gunScript.enabled = false;
             rb.isKinematic = false;
             coll.isTrigger = true;
+            bulletImage.enabled = false;
+            ammoDisplay.enabled = false;
+            reloadText.enabled = false;
         }
 
         if(equipped)
@@ -38,6 +45,9 @@ public class GunPickup : MonoBehaviour
             gunScript.enabled = true;
             rb.isKinematic = true;
             coll.isTrigger = true;
+            bulletImage.enabled = true;
+            ammoDisplay.enabled = true;
+            reloadText.enabled = true;
             slotFull = true;
         }
     }
@@ -53,10 +63,7 @@ public class GunPickup : MonoBehaviour
         }
 
         if(equipped && Input.GetKeyDown(KeyCode.G)) Drop();
-        if(equipped)
-        {
-            transform.position = player.position;
-        }
+        if(equipped) transform.position = player.position;
     }
 
     private void Pickup()
@@ -66,6 +73,9 @@ public class GunPickup : MonoBehaviour
 
         rb.isKinematic = true;
         coll.isTrigger = true;
+        bulletImage.enabled = true;
+        ammoDisplay.enabled = true;
+        reloadText.enabled = true;
 
         gunScript.enabled = true;
     }
@@ -77,6 +87,9 @@ public class GunPickup : MonoBehaviour
 
         rb.isKinematic = false;
         coll.isTrigger = true;
+        bulletImage.enabled = false;
+        ammoDisplay.enabled = false;
+        reloadText.enabled = false;
 
         gunScript.enabled = false;
 
@@ -85,7 +98,7 @@ public class GunPickup : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name.Equals("Player"))
+        if (collision.gameObject.name.Equals("Player") && !slotFull)
         {
             pickUpText.gameObject.SetActive(true);
             pickUpAllowed = true;

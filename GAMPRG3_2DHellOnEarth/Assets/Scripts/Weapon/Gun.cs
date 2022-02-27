@@ -5,24 +5,29 @@ using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
-    public int magazineSize, bulletsPerTap;
-    private float Offset = -90;
+    [Header("References")]
     public Transform shotPos;
     public GameObject bullet;
+    public SpriteRenderer gunSprite;
+
+    [Header("Gun Stats")]
+    public int magazineSize, bulletsPerTap;
+    private float Offset = -90;
     public float spread, bulletSpeed, reloadTime, timeBetweenShots, timeBetweenShooting;
     int bulletsLeft, bulletsShot;
 
-    bool shooting, readyToShoot, reloading;
+    bool shooting, readyToShoot, reloading, IsReloading;
     public bool allowAutoFire;
 
-    
-    public Text AmmoDisplay;
-    public Text ReloadText;
-    private bool IsReloading;
+    [Header("UI")]
+    public Text ammoDisplay;
+    public Text reloadText;
+    public Text reloadingText;
 
     // Start is called before the first frame update
     void Start()
     {
+        gunSprite = gameObject.GetComponent<SpriteRenderer>();
         bulletsLeft = magazineSize;
         readyToShoot = true;
     }
@@ -33,8 +38,17 @@ public class Gun : MonoBehaviour
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle + Offset, Vector3.forward);
+        if (mousePos.x < 0.0f)
+        {
+            gunSprite.flipX = true;
+        }
+        else
+        {
+            gunSprite.flipX = false;
+        }
 
         Inputs();
+        CheckUI();
     }
 
     private void Inputs()
@@ -42,9 +56,12 @@ public class Gun : MonoBehaviour
         if(allowAutoFire) shooting = Input.GetKey(KeyCode.Mouse0);
         else shooting = Input.GetKeyDown(KeyCode.Mouse0);
 
-        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSize && !reloading)
+        if (bulletsLeft < magazineSize && !reloading && !IsReloading)
         {
-            Reload(); 
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Reload();
+            }
         }
         
         if (readyToShoot && shooting && !reloading && bulletsLeft > 0)
@@ -52,20 +69,18 @@ public class Gun : MonoBehaviour
             bulletsShot = bulletsPerTap;
             Shoot();
         }
-
-        if(bulletsLeft <= magazineSize / 10)
+        if (bulletsLeft <= magazineSize/10)
         {
-            ReloadText.gameObject.SetActive(true);
+            reloadText.gameObject.SetActive(true);
         }
         else
         {
-            ReloadText.gameObject.SetActive(false);
+            reloadText.gameObject.SetActive(false);
         }
     }
 
     void Shoot()
     {
-
         readyToShoot = false;
         {
             GameObject b = Instantiate(bullet, shotPos.position, shotPos.rotation);
@@ -78,7 +93,6 @@ public class Gun : MonoBehaviour
         bulletsLeft--;
         bulletsShot--;
 
-        AmmoDisplay.text = bulletsLeft.ToString();
         Invoke("ResetShot", timeBetweenShooting);
 
         if(bulletsLeft > 0 && bulletsShot > 0)
@@ -93,6 +107,7 @@ public class Gun : MonoBehaviour
     private void Reload ()
     {
         reloading = true;
+        reloadingText.gameObject.SetActive(true);
         Invoke("ReloadFinished", reloadTime);
     }
 
@@ -100,7 +115,13 @@ public class Gun : MonoBehaviour
     {
         bulletsLeft = magazineSize;
         reloading = false;
+        reloadText.gameObject.SetActive(false);
+        reloadingText.gameObject.SetActive(false);
     }
 
+    private void CheckUI()
+    {
+        ammoDisplay.text = bulletsLeft.ToString();
+    }
     
 }

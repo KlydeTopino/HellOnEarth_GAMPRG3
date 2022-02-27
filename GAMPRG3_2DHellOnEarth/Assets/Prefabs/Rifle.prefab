@@ -110,8 +110,9 @@ MonoBehaviour:
   timeBetweenShots: 0.05
   timeBetweenShooting: 0.05
   allowAutoFire: 1
-  ReloadHud: {fileID: 0}
   AmmoDisplay: {fileID: 0}
+  ReloadText: {fileID: 0}
+  ReloadingText: {fileID: 0}
 --- !u!114 &6083127359799789979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,10 +128,12 @@ MonoBehaviour:
   gunScript: {fileID: 2265012977803872759}
   rb: {fileID: 8362695102259798659}
   coll: {fileID: 1094958543459468837}
-  player: {fileID: 0}
+  player: {fileID: 4969929711938934876, guid: ab7d73fabe0a333418d770362ba04a7a, type: 3}
+  bulletImage: {fileID: 0}
   pickupRange: 0.2
   dropForce: 0
   equipped: 0
+  pickUpText: {fileID: 0}
 --- !u!50 &8362695102259798659
 Rigidbody2D:
   serializedVersion: 4
