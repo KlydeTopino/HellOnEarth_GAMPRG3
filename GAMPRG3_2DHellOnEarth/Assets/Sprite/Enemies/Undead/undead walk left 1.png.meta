@@ -1,16 +1,28 @@
 fileFormatVersion: 2
-guid: 6f257c06b78e6754a8539b8e2e1c0a42
+guid: a0b57e01a47dd9547ad269a38d93557d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2315365681358976425
-    second: undead attack left_0
+      213: -2197496777937178928
+    second: undead walk left 1_0
   - first:
-      213: -5395711553322185925
-    second: undead attack left_1
+      213: -1011547467158382777
+    second: undead walk left 1_1
   - first:
-      213: -8181094104129803019
-    second: undead attack left_2
+      213: 4575822140035233185
+    second: undead walk left 1_2
+  - first:
+      213: -6736846453833105949
+    second: undead walk left 1_3
+  - first:
+      213: 4532508636405982969
+    second: undead walk left 1_4
+  - first:
+      213: -802247766606653073
+    second: undead walk left 1_5
+  - first:
+      213: 1206413666321282407
+    second: undead walk left 1_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -112,13 +124,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: undead attack left_0
+      name: undead walk left 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -126,20 +138,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75ac77d1e2b2edfd0800000000000000
-      internalID: -2315365681358976425
+      spriteID: 0de2df3c25ce081e0800000000000000
+      internalID: -2197496777937178928
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: undead attack left_1
+      name: undead walk left 1_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 18
         y: 0
-        width: 32
-        height: 32
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,20 +159,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3b82c11ee49e15b0800000000000000
-      internalID: -5395711553322185925
+      spriteID: 747149220f246f1f0800000000000000
+      internalID: -1011547467158382777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: undead attack left_2
+      name: undead walk left 1_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 36
         y: 0
-        width: 32
-        height: 32
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,8 +180,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fcec41f14ae67e80800000000000000
-      internalID: -8181094104129803019
+      spriteID: 1a5fa2c1ef5908f30800000000000000
+      internalID: 4575822140035233185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undead walk left 1_3
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 0
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ed7de4f7d9e182a0800000000000000
+      internalID: -6736846453833105949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undead walk left 1_4
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f66e5e2794b6ee30800000000000000
+      internalID: 4532508636405982969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undead walk left 1_5
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 0
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f695f8128e7ddd4f0800000000000000
+      internalID: -802247766606653073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undead walk left 1_6
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 0
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 765b14176da0eb010800000000000000
+      internalID: 1206413666321282407
       vertices: []
       indices: 
       edges: []

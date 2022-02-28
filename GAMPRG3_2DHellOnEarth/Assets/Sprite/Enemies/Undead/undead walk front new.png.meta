@@ -1,13 +1,28 @@
 fileFormatVersion: 2
-guid: 136cc4fd7ee19ca438894967cbfdc2ab
+guid: d3fb36f675ad22f4b80f32d47c4485e3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4937385209926000915
-    second: undead hurt front_0
+      213: 6197883207837168824
+    second: undead walk front new_0
   - first:
-      213: 7806741634630207578
-    second: undead hurt front_1
+      213: 1019858671456474771
+    second: undead walk front new_1
+  - first:
+      213: 416426385248250218
+    second: undead walk front new_2
+  - first:
+      213: -3580276572350361611
+    second: undead walk front new_3
+  - first:
+      213: 3328879730317932753
+    second: undead walk front new_4
+  - first:
+      213: 2312961659198436191
+    second: undead walk front new_5
+  - first:
+      213: -544586347342330037
+    second: undead walk front new_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -109,13 +124,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: undead hurt front_0
+      name: undead walk front new_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -123,20 +138,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31128e460bd158440800000000000000
-      internalID: 4937385209926000915
+      spriteID: 8b43e7290fd430650800000000000000
+      internalID: 6197883207837168824
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: undead hurt front_1
+      name: undead walk front new_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 18
         y: 0
-        width: 32
-        height: 32
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,8 +159,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a58c261a72e175c60800000000000000
-      internalID: 7806741634630207578
+      spriteID: 396d349ee04472e00800000000000000
+      internalID: 1019858671456474771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undead walk front new_2
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 0
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6962df479177c500800000000000000
+      internalID: 416426385248250218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undead walk front new_3
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 0
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ff47633d6d405ec0800000000000000
+      internalID: -3580276572350361611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undead walk front new_4
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d839914a7e823e20800000000000000
+      internalID: 3328879730317932753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undead walk front new_5
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 0
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f53fe9bdf5a491020800000000000000
+      internalID: 2312961659198436191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undead walk front new_6
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 0
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4702293a9d3178f0800000000000000
+      internalID: -544586347342330037
       vertices: []
       indices: 
       edges: []

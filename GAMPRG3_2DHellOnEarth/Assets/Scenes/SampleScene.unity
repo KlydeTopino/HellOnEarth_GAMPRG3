@@ -346,7 +346,8 @@ MonoBehaviour:
   - WaveName: Wave 1
     EnemyCounter: 1
     EnemyTypes:
-    - {fileID: 8834139432541539292, guid: a8486ec249d01af4480861ac4905db0e, type: 3}
+    - {fileID: 8705141656642422106, guid: 843be301ab28492469271beb3045dbc6, type: 3}
+    - {fileID: 8705141656642422106, guid: 843be301ab28492469271beb3045dbc6, type: 3}
     SpawnInterval: 1
   - WaveName: Second Wave
     EnemyCounter: 2

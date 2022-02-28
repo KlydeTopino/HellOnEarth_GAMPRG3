@@ -1,25 +1,16 @@
 fileFormatVersion: 2
-guid: 9e5a340f083f41442a664e048f959ce6
+guid: d2686d3f4f8ad6b4dbfe7b96d5c9af62
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8319836857098011965
-    second: undead death front_0
+      213: -4774130236579947021
+    second: undead attack leftt_0
   - first:
-      213: -9042114614053592794
-    second: undead death front_1
+      213: 8926826117463823397
+    second: undead attack leftt_1
   - first:
-      213: -3410064538768534161
-    second: undead death front_2
-  - first:
-      213: -778380435434066506
-    second: undead death front_3
-  - first:
-      213: 3202312526127648765
-    second: undead death front_4
-  - first:
-      213: -2329130013221076106
-    second: undead death front_5
+      213: 7686840336698182
+    second: undead attack leftt_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -121,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: undead death front_0
+      name: undead attack leftt_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,20 +126,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3587888a8ff57370800000000000000
-      internalID: 8319836857098011965
+      spriteID: 3fd533128d1eebdb0800000000000000
+      internalID: -4774130236579947021
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: undead death front_1
+      name: undead attack leftt_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 18
         y: 0
-        width: 32
-        height: 32
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,20 +147,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 621a7fa6aa4f38280800000000000000
-      internalID: -9042114614053592794
+      spriteID: 5245c17be0572eb70800000000000000
+      internalID: 8926826117463823397
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: undead death front_2
+      name: undead attack leftt_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 36
         y: 0
-        width: 32
-        height: 32
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,71 +168,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f659b898e540da0d0800000000000000
-      internalID: -3410064538768534161
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: undead death front_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6bda6d53e13a235f0800000000000000
-      internalID: -778380435434066506
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: undead death front_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dff4f93a646e07c20800000000000000
-      internalID: 3202312526127648765
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: undead death front_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 673c14ed7944dafd0800000000000000
-      internalID: -2329130013221076106
+      spriteID: 64bc6bbf32f4b1000800000000000000
+      internalID: 7686840336698182
       vertices: []
       indices: 
       edges: []

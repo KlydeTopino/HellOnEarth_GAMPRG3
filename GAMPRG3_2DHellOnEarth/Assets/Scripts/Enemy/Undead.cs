@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Zombie : Enemy
+public class Undead : Enemy
 {
     private Rigidbody2D myRigidbody;
     public Transform target;
@@ -18,6 +18,9 @@ public class Zombie : Enemy
     private bool isInChaseRange;
 
     public LayerMask whatIsPlayer;
+
+    public Animator undeadAnimator;
+
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +50,10 @@ public class Zombie : Enemy
     {
         if (isInChaseRange && Vector3.Distance(target.position, transform.position) > attackRadius)
         {
+            undeadAnimator.SetBool("isMoving", true);
+            undeadAnimator.SetBool("withinRange", false);
+            undeadAnimator.SetFloat("MoveX", (-target.position.x - (-transform.position.x)));
+            undeadAnimator.SetFloat("MoveY", (target.position.x - (transform.position.x)));
             Vector3 temp = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
             myRigidbody.MovePosition(temp);
         }
@@ -54,12 +61,14 @@ public class Zombie : Enemy
         {
             if (attackSpeed <= canAttack)
             {
+                undeadAnimator.SetBool("withinRange", true);
                 PlayerHealthScript.currentHealth -= baseAttack;
                 Debug.Log("Attack Player");
                 canAttack = 0f;
             }
             else
             {
+                undeadAnimator.SetBool("withinRange", false);
                 canAttack += Time.deltaTime;
             }
         }
