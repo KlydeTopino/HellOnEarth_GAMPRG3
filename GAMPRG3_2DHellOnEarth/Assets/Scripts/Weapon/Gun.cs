@@ -9,6 +9,8 @@ public class Gun : MonoBehaviour
     public Transform shotPos;
     public GameObject bullet;
     public SpriteRenderer gunSprite;
+    public GameObject player;
+    public PlayerStats stats;
 
     [Header("Gun Stats")]
     public int magazineSize, bulletsPerTap;
@@ -18,6 +20,10 @@ public class Gun : MonoBehaviour
 
     bool shooting, readyToShoot, reloading, IsReloading;
     public bool allowAutoFire;
+
+    [Header("Gun Upgrades")]
+    int bulletsPerTapIncreased;
+    float timeBetweenShootingReduced, spreadReduced, reloadTimeReduced;
 
     [Header("UI")]
     public Text ammoDisplay;
@@ -30,6 +36,19 @@ public class Gun : MonoBehaviour
         gunSprite = gameObject.GetComponent<SpriteRenderer>();
         bulletsLeft = magazineSize;
         readyToShoot = true;
+    }
+
+    void Awake()
+    {
+        stats = player.GetComponent<PlayerStats>();
+    }
+
+    void UpdateStats()
+    {
+        spreadReduced = spread - stats.spreadReduction;
+        timeBetweenShootingReduced = timeBetweenShooting - stats.timeBetweenShootingReduction;
+        reloadTimeReduced = reloadTime - stats.reloadSpeedReduction;
+        bulletsPerTapIncreased = bulletsPerTap + stats.bulletsPerTapIncrease;
     }
 
     // Update is called once per frame
@@ -49,6 +68,7 @@ public class Gun : MonoBehaviour
 
         Inputs();
         CheckUI();
+        UpdateStats();
     }
 
     private void Inputs()
@@ -66,7 +86,7 @@ public class Gun : MonoBehaviour
         
         if (readyToShoot && shooting && !reloading && bulletsLeft > 0)
         {
-            bulletsShot = bulletsPerTap;
+            bulletsShot = bulletsPerTapIncreased;
             Shoot();
         }
         if (bulletsLeft <= magazineSize/10)
@@ -86,14 +106,14 @@ public class Gun : MonoBehaviour
             GameObject b = Instantiate(bullet, shotPos.position, shotPos.rotation);
             Rigidbody2D brb = b.GetComponent<Rigidbody2D>();
             Vector2 dir = transform.rotation * Vector2.up;
-            Vector2 pdir = Vector2.Perpendicular(dir) * Random.Range(-spread, spread);
+            Vector2 pdir = Vector2.Perpendicular(dir) * Random.Range(-spreadReduced, spreadReduced);
             brb.velocity = (dir + pdir) * bulletSpeed;
         }
 
         bulletsLeft--;
         bulletsShot--;
 
-        Invoke("ResetShot", timeBetweenShooting);
+        Invoke("ResetShot", timeBetweenShootingReduced);
 
         if(bulletsLeft > 0 && bulletsShot > 0)
         Invoke("Shoot", timeBetweenShots);
@@ -108,7 +128,7 @@ public class Gun : MonoBehaviour
     {
         reloading = true;
         reloadingText.gameObject.SetActive(true);
-        Invoke("ReloadFinished", reloadTime);
+        Invoke("ReloadFinished", reloadTimeReduced);
     }
 
     private void ReloadFinished()

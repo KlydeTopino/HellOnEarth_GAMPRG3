@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public int vitality, fireRate, reloadSpeed, moveSpeed;
+    public float timeBetweenShootingReduction { get; set; }
+    public float reloadSpeedReduction { get; set;}
+    public float spreadReduction { get; set;}
+    public int bulletsPerTapIncrease {get; set; }
 }
