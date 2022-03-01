@@ -10,5 +10,6 @@ public class ReloadSpeedUpgrade : Upgrade
     public override void Effect()
     {
         stats.reloadSpeedReduction += timeReduce;
+        Debug.Log("Reload Speed has been increased!");
     }
 }

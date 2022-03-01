@@ -10,5 +10,6 @@ public class MoveSpeedUpgrade : Upgrade
     public override void Effect()
     {
         player.MoveSpeed += speedIncrease;
+        Debug.Log("Movement Speed has been increased!");
     }
 }

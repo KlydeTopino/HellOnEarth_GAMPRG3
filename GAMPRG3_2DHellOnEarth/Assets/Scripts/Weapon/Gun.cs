@@ -46,6 +46,7 @@ public class Gun : MonoBehaviour
     void UpdateStats()
     {
         spreadReduced = spread - stats.spreadReduction;
+        if(spreadReduced < 0) spreadReduced = 0;
         timeBetweenShootingReduced = timeBetweenShooting - stats.timeBetweenShootingReduction;
         reloadTimeReduced = reloadTime - stats.reloadSpeedReduction;
         bulletsPerTapIncreased = bulletsPerTap + stats.bulletsPerTapIncrease;

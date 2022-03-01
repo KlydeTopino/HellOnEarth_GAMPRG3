@@ -10,5 +10,6 @@ public class BulletCountUpgrade : Upgrade
     public override void Effect()
     {
         stats.bulletsPerTapIncrease += bulletCountIncrease;
+        Debug.Log("Bullet per shot; has been increased!");
     }
 }

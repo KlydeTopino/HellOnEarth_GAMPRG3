@@ -10,5 +10,6 @@ public class FireRateUpgrade : Upgrade
     public override void Effect()
     {
         stats.timeBetweenShootingReduction += timeReduction;
+        Debug.Log("Fire Rate has been increased!");
     }
 }

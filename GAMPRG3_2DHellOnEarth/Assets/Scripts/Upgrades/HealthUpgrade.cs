@@ -12,5 +12,6 @@ public class HealthUpgrade : Upgrade
     {
         health.maxHealth =+ healthUpgrade;
         healthBar.SetMaxHealth(health.maxHealth);
+        Debug.Log("Max Health has been increased!");
     }
 }

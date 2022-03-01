@@ -10,5 +10,6 @@ public class SpreadUpgrade : Upgrade
     public override void Effect()
     {
         stats.spreadReduction = spreadReduceUpgrade;
+        Debug.Log("Accuracy has been increased!");
     }
 }
