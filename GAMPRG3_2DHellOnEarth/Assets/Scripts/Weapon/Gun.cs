@@ -30,6 +30,7 @@ public class Gun : MonoBehaviour
     public Text reloadText;
     public Text reloadingText;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -74,8 +75,11 @@ public class Gun : MonoBehaviour
 
     private void Inputs()
     {
-        if(allowAutoFire) shooting = Input.GetKey(KeyCode.Mouse0);
-        else shooting = Input.GetKeyDown(KeyCode.Mouse0);
+        if (allowAutoFire)
+            shooting = Input.GetKey(KeyCode.Mouse0); 
+
+        else
+            shooting = Input.GetKeyDown(KeyCode.Mouse0);
 
         if (bulletsLeft < magazineSize && !reloading && !IsReloading)
         {

@@ -504,7 +504,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &126927005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,22 +527,22 @@ MonoBehaviour:
   - WaveName: Second Wave
     EnemyCounter: 2
     EnemyTypes:
-    - {fileID: 8834139432541539292, guid: a8486ec249d01af4480861ac4905db0e, type: 3}
+    - {fileID: 8705141656642422106, guid: 843be301ab28492469271beb3045dbc6, type: 3}
     SpawnInterval: 1
   - WaveName: Wave 3
     EnemyCounter: 3
     EnemyTypes:
-    - {fileID: 8834139432541539292, guid: a8486ec249d01af4480861ac4905db0e, type: 3}
+    - {fileID: 8705141656642422106, guid: 843be301ab28492469271beb3045dbc6, type: 3}
     SpawnInterval: 1
   - WaveName: Wave 4
     EnemyCounter: 4
     EnemyTypes:
-    - {fileID: 8834139432541539292, guid: a8486ec249d01af4480861ac4905db0e, type: 3}
+    - {fileID: 8705141656642422106, guid: 843be301ab28492469271beb3045dbc6, type: 3}
     SpawnInterval: 1
   - WaveName: Final Wave
     EnemyCounter: 5
     EnemyTypes:
-    - {fileID: 8834139432541539292, guid: a8486ec249d01af4480861ac4905db0e, type: 3}
+    - {fileID: 8705141656642422106, guid: 843be301ab28492469271beb3045dbc6, type: 3}
     SpawnInterval: 1
   SpawnPoints:
   - {fileID: 31978178}
@@ -551,7 +551,7 @@ MonoBehaviour:
   - {fileID: 763220439}
   - {fileID: 512959517}
   WaveAnimator: {fileID: 126927007}
-  WaveName: {fileID: 0}
+  WaveName: {fileID: 252544373}
 --- !u!4 &126927006
 Transform:
   m_ObjectHideFlags: 0
@@ -4301,7 +4301,6 @@ GameObject:
   m_Component:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
-  - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
@@ -4312,14 +4311,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &519420029
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
 --- !u!114 &519420030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6210,7 +6201,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.8867924, g: 0.8867924, b: 0.8867924, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.17
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -6283,7 +6274,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1086393111
 GameObject:
@@ -6512,7 +6503,7 @@ Transform:
   - {fileID: 184480384}
   - {fileID: 1676171827}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1222482068
 GameObject:
@@ -7115,6 +7106,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1554257460}
+    - target: {fileID: 5028228543105671020, guid: c194cb92d36e7984fae32a832fe38c75, type: 3}
+      propertyPath: GunSound
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5028228543105671020, guid: c194cb92d36e7984fae32a832fe38c75, type: 3}
       propertyPath: ReloadHud
       value: 

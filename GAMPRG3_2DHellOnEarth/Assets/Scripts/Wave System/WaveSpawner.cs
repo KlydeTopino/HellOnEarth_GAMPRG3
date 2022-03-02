@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,30 +25,32 @@ public class WaveSpawner : MonoBehaviour
     private bool WillSpawn = true;
     private bool WillAnimate = false;
 
-    // Update is called once per frame
+
     private void Update()
     {
         CurrentWave = WavesNumber[CurrentWaveNumber];
         SpawnWave();
-        GameObject[] TotalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-        if (TotalEnemies.Length == 0)
+        GameObject[] totalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+        if (totalEnemies.Length == 0)
         {
             if (CurrentWaveNumber + 1 != WavesNumber.Length)
             {
-                if ( WillAnimate)
+                if (WillAnimate)
                 {
                     WaveName.text = WavesNumber[CurrentWaveNumber + 1].WaveName;
                     WaveAnimator.SetTrigger("WaveComplete");
-                    Debug.Log("NextWave");
                     WillAnimate = false;
                 }
+
             }
             else
             {
-                Debug.Log("Game Finished");
+                Debug.Log("GameFinish");
             }
-        } 
-        
+
+
+        }
+
     }
 
     void SpawnNextWave()
@@ -72,6 +73,7 @@ public class WaveSpawner : MonoBehaviour
             if(CurrentWave.EnemyCounter == 0)
             {
                 WillSpawn = false;
+                WillAnimate = true;
             }
         }
     }
