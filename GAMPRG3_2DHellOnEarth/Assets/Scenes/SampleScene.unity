@@ -449,6 +449,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 126927004}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: 
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &78120586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -552,6 +564,10 @@ MonoBehaviour:
   - {fileID: 512959517}
   WaveAnimator: {fileID: 126927007}
   WaveName: {fileID: 252544373}
+  UpgradesUI: {fileID: 2082935409}
+  UpgradeOptions: {fileID: 1325720476}
+  UpgradeWaves: 0300000005000000
+  ChoosingUpgrades: 0
 --- !u!4 &126927006
 Transform:
   m_ObjectHideFlags: 0
@@ -4537,7 +4553,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &530276006
 Transform:
   m_ObjectHideFlags: 0
@@ -7547,6 +7563,7 @@ MonoBehaviour:
   - {fileID: 711748149}
   - {fileID: 552816203}
   - {fileID: 1475252703}
+  spawner: {fileID: 126927005}
 --- !u!1 &1336220835
 GameObject:
   m_ObjectHideFlags: 0

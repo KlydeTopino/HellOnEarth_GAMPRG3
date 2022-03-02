@@ -17,6 +17,9 @@ public class WaveSpawner : MonoBehaviour
     public Transform[] SpawnPoints;
     public Animator WaveAnimator;
     public Text WaveName;
+    public GameObject UpgradesUI;
+    public UpgradeOptionManager UpgradeOptions;
+    public int[] UpgradeWaves;
 
     private Wave CurrentWave;
     private int CurrentWaveNumber;
@@ -24,32 +27,48 @@ public class WaveSpawner : MonoBehaviour
 
     private bool WillSpawn = true;
     private bool WillAnimate = false;
+    public bool ChoosingUpgrades = false;
+    private bool CreatedUpgrades = false;
 
 
     private void Update()
     {
         CurrentWave = WavesNumber[CurrentWaveNumber];
-        SpawnWave();
-        GameObject[] totalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-        if (totalEnemies.Length == 0)
+        if(!ChoosingUpgrades)
         {
-            if (CurrentWaveNumber + 1 != WavesNumber.Length)
+            SpawnWave();
+            GameObject[] totalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+            if (totalEnemies.Length == 0)
             {
-                if (WillAnimate)
+                if (CurrentWaveNumber + 1 != WavesNumber.Length)
                 {
-                    WaveName.text = WavesNumber[CurrentWaveNumber + 1].WaveName;
-                    WaveAnimator.SetTrigger("WaveComplete");
-                    WillAnimate = false;
+                    if (WillAnimate)
+                    {
+                        WaveName.text = WavesNumber[CurrentWaveNumber + 1].WaveName;
+                        foreach (int waveNum in UpgradeWaves)
+                        {
+                            if (waveNum == CurrentWaveNumber+1)
+                            {
+                                WaveAnimator.SetBool("Choosing Upgrades", true);
+                                ChoosingUpgrades = true;
+                            }
+                        }
+                        Debug.Log("Current Wave: " + CurrentWaveNumber);
+                        WaveAnimator.SetTrigger("WaveComplete");
+                        if(ChoosingUpgrades) ShowUpgrades();
+                        WillAnimate = false;
+                    }
+
+                }
+                else
+                {
+                    Debug.Log("GameFinish");
                 }
 
-            }
-            else
-            {
-                Debug.Log("GameFinish");
-            }
 
-
+            }
         }
+        
 
     }
 
@@ -63,6 +82,8 @@ public class WaveSpawner : MonoBehaviour
     {
         if (WillSpawn && SpawnTime < Time.time)
         {
+            CreatedUpgrades = false;
+            Debug.Log("Current Wave: " + CurrentWaveNumber);
             GameObject RandomEnemy = CurrentWave.EnemyTypes[Random.Range(0, CurrentWave.EnemyTypes.Length)];
             Transform RandomSpawnPoint = SpawnPoints[Random.Range(0, SpawnPoints.Length)];
 
@@ -75,6 +96,18 @@ public class WaveSpawner : MonoBehaviour
                 WillSpawn = false;
                 WillAnimate = true;
             }
+        }
+    }
+    
+    void ShowUpgrades()
+    {
+        ChoosingUpgrades = true;
+
+        if(!CreatedUpgrades) 
+        {   
+            UpgradesUI.SetActive(true);
+            UpgradeOptions.CreateOptions();
+            CreatedUpgrades = true;
         }
     }
 }
