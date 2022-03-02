@@ -10,7 +10,7 @@ public class Undead : Enemy
     public float chaseRadius;
     public float attackRadius;
     private float canAttack = 0f;
-    private float attackSpeed = 1f;
+    private float attackSpeed = .5f;
 
     public PlayerHealth PlayerHealthScript;
 
@@ -34,7 +34,7 @@ public class Undead : Enemy
     {
         isInAttackRange = Physics2D.OverlapCircle(transform.position, attackRadius, whatIsPlayer);
         isInChaseRange = Physics2D.OverlapCircle(transform.position, chaseRadius, whatIsPlayer);
-        if (health == 0)
+        if (health <= 0)
         {
             Death();
         }
@@ -57,11 +57,18 @@ public class Undead : Enemy
             Vector3 temp = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
             myRigidbody.MovePosition(temp);
         }
+
+        if (!isInChaseRange)
+        {
+            undeadAnimator.SetBool("isMoving", false);
+        }
+
         if (isInAttackRange)
         {
             if (attackSpeed <= canAttack)
             {
                 undeadAnimator.SetBool("withinRange", true);
+                undeadAnimator.SetBool("isMoving", false);
                 PlayerHealthScript.currentHealth -= baseAttack;
                 Debug.Log("Attack Player");
                 canAttack = 0f;
@@ -69,18 +76,9 @@ public class Undead : Enemy
             else
             {
                 undeadAnimator.SetBool("withinRange", false);
+                //undeadAnimator.SetBool("isAttackOnCooldown", false);               
                 canAttack += Time.deltaTime;
             }
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Bullet")
-        {
-            Vector2 difference = transform.position - other.transform.position;
-            transform.position = new Vector2(transform.position.x + difference.x, transform.position.y + difference.y);
-            health -= 50;
         }
     }
 
