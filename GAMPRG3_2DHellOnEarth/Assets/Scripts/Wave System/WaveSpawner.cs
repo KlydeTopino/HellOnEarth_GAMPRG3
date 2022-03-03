@@ -20,6 +20,7 @@ public class WaveSpawner : MonoBehaviour
     public GameObject UpgradesUI;
     public UpgradeOptionManager UpgradeOptions;
     public int[] UpgradeWaves;
+    public int[] LightSwtichOff;
 
     private Wave CurrentWave;
     private int CurrentWaveNumber;
@@ -30,6 +31,8 @@ public class WaveSpawner : MonoBehaviour
     public bool ChoosingUpgrades = false;
     private bool CreatedUpgrades = false;
 
+    public GameObject Light;
+    private bool On = false;
 
     private void Update()
     {
@@ -51,6 +54,13 @@ public class WaveSpawner : MonoBehaviour
                             {
                                 WaveAnimator.SetBool("Choosing Upgrades", true);
                                 ChoosingUpgrades = true;
+                            }
+                        }
+                        foreach(int WaveNum in LightSwtichOff)
+                        {
+                            if(WaveNum == CurrentWaveNumber + 1 && !On)
+                            {
+                                Light.SetActive(false);
                             }
                         }
                         Debug.Log("Current Wave: " + CurrentWaveNumber);
