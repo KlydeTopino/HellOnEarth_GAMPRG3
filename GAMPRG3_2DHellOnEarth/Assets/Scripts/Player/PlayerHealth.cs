@@ -8,6 +8,8 @@ public class PlayerHealth : MonoBehaviour
     public float maxHealth;
     public float currentHealth;
 
+    public Slider HealthSlider;
+
     public HealthBar healthBar;
 
     // Start is called before the first frame update
@@ -24,5 +26,11 @@ public class PlayerHealth : MonoBehaviour
         {
             currentHealth = maxHealth;
         }
+    }
+
+    public void TakeDamage(float amount)
+    {
+        currentHealth -= amount;
+        HealthSlider.value = currentHealth;
     }
 }
