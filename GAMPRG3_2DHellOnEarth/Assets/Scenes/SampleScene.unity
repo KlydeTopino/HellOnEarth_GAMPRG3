@@ -15802,10 +15802,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 0
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
 --- !u!1 &1754180520
 GameObject:
   m_ObjectHideFlags: 0
@@ -19050,6 +19046,10 @@ PrefabInstance:
       propertyPath: HealthSlider
       value: 
       objectReference: {fileID: 900833543}
+    - target: {fileID: 4969929712968548623, guid: ab7d73fabe0a333418d770362ba04a7a, type: 3}
+      propertyPath: GameOverScreen
+      value: 
+      objectReference: {fileID: 652006390}
     - target: {fileID: 4969929713025793760, guid: ab7d73fabe0a333418d770362ba04a7a, type: 3}
       propertyPath: m_Intensity
       value: 0.59
