@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class BossHealth : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Rigidbody2D rb;
+    public int health = 500;
+    private float waitTime = 3f;
+
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(int damage)
     {
-        
+        health -= damage;
+
+        if (health <= 0)
+        {
+            Death();
+        }
+    }
+
+    public void Death()
+    {
+        GetComponent<Animator>().SetTrigger("isDead");
+        rb = null;
+        Destroy(gameObject, waitTime);
     }
 }

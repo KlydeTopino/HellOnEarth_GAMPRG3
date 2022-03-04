@@ -69,7 +69,7 @@ public class Undead : Enemy
             {
                 undeadAnimator.SetBool("withinRange", true);
                 undeadAnimator.SetBool("isMoving", false);
-                PlayerHealthScript.currentHealth -= baseAttack;
+                PlayerHealthScript.TakeDamage(baseAttack);
                 Debug.Log("Attack Player");
                 canAttack = 0f;
             }

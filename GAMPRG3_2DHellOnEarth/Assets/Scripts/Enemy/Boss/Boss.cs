@@ -73,8 +73,8 @@ public class Boss : MonoBehaviour
         Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRadius, whatIsPlayer);
         if (colInfo != null)
         {
-            //colInfo.GetComponent<PlayerHealth>().TakeDamage(baseAttack);
-            PlayerHealthScript.currentHealth -= baseAttack;
+            colInfo.GetComponent<PlayerHealth>().TakeDamage(baseAttack);
+            //PlayerHealthScript.currentHealth -= baseAttack;
         }
     }
 
