@@ -531,29 +531,59 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WavesNumber:
   - WaveName: Wave 1
-    EnemyCounter: 1
-    EnemyTypes:
-    - {fileID: 8705141656642422106, guid: 843be301ab28492469271beb3045dbc6, type: 3}
-    - {fileID: 8705141656642422106, guid: 843be301ab28492469271beb3045dbc6, type: 3}
-    SpawnInterval: 1
-  - WaveName: Second Wave
-    EnemyCounter: 2
-    EnemyTypes:
-    - {fileID: 8705141656642422106, guid: 843be301ab28492469271beb3045dbc6, type: 3}
-    SpawnInterval: 1
-  - WaveName: Wave 3
     EnemyCounter: 3
     EnemyTypes:
     - {fileID: 8705141656642422106, guid: 843be301ab28492469271beb3045dbc6, type: 3}
-    SpawnInterval: 1
-  - WaveName: Wave 4
+    SpawnInterval: 3
+  - WaveName: Wave 2
     EnemyCounter: 4
     EnemyTypes:
     - {fileID: 8705141656642422106, guid: 843be301ab28492469271beb3045dbc6, type: 3}
+    SpawnInterval: 3
+  - WaveName: Wave 3
+    EnemyCounter: 6
+    EnemyTypes:
+    - {fileID: 8705141656642422106, guid: 843be301ab28492469271beb3045dbc6, type: 3}
+    SpawnInterval: 2
+  - WaveName: Wave 4
+    EnemyCounter: 7
+    EnemyTypes:
+    - {fileID: 8705141656642422106, guid: 843be301ab28492469271beb3045dbc6, type: 3}
     SpawnInterval: 1
-  - WaveName: Final Wave
+  - WaveName: Wave 5
     EnemyCounter: 5
     EnemyTypes:
+    - {fileID: 8705141656642422106, guid: 843be301ab28492469271beb3045dbc6, type: 3}
+    - {fileID: 8705141656642422106, guid: 843be301ab28492469271beb3045dbc6, type: 3}
+    SpawnInterval: 1
+  - WaveName: Wave 6
+    EnemyCounter: 8
+    EnemyTypes:
+    - {fileID: 8705141656642422106, guid: 843be301ab28492469271beb3045dbc6, type: 3}
+    - {fileID: 8705141656642422106, guid: 843be301ab28492469271beb3045dbc6, type: 3}
+    SpawnInterval: 3
+  - WaveName: Wave 7
+    EnemyCounter: 10
+    EnemyTypes:
+    - {fileID: 8705141656642422106, guid: 843be301ab28492469271beb3045dbc6, type: 3}
+    - {fileID: 8705141656642422106, guid: 843be301ab28492469271beb3045dbc6, type: 3}
+    SpawnInterval: 2
+  - WaveName: Wave 8
+    EnemyCounter: 12
+    EnemyTypes:
+    - {fileID: 8705141656642422106, guid: 843be301ab28492469271beb3045dbc6, type: 3}
+    - {fileID: 8705141656642422106, guid: 843be301ab28492469271beb3045dbc6, type: 3}
+    SpawnInterval: 1
+  - WaveName: Wave 9
+    EnemyCounter: 6
+    EnemyTypes:
+    - {fileID: 8705141656642422106, guid: 843be301ab28492469271beb3045dbc6, type: 3}
+    - {fileID: 8705141656642422106, guid: 843be301ab28492469271beb3045dbc6, type: 3}
+    SpawnInterval: 1
+  - WaveName: Final Wave
+    EnemyCounter: 15
+    EnemyTypes:
+    - {fileID: 8705141656642422106, guid: 843be301ab28492469271beb3045dbc6, type: 3}
     - {fileID: 8705141656642422106, guid: 843be301ab28492469271beb3045dbc6, type: 3}
     SpawnInterval: 1
   SpawnPoints:
@@ -567,7 +597,7 @@ MonoBehaviour:
   UpgradesUI: {fileID: 2082935409}
   UpgradeOptions: {fileID: 1325720476}
   UpgradeWaves: 0300000005000000
-  LightSwtichOff: 0300000004000000
+  LightSwtichOff: 0300000004000000070000000800000009000000
   ChoosingUpgrades: 0
   Light: {fileID: 1063977709}
 --- !u!4 &126927006
@@ -5295,6 +5325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b81e3f0eddaa064498df91955bb420ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   health: 500
 --- !u!1001 &640059704
 PrefabInstance:
