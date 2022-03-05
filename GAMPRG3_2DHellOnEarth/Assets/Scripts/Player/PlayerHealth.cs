@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public Animator animator;
+
     public float maxHealth;
     public float currentHealth;
 
@@ -29,7 +31,7 @@ public class PlayerHealth : MonoBehaviour
             currentHealth = maxHealth;
         }
 
-        if (currentHealth == 0)
+        if (currentHealth <= 0)
         {
             GameOverScreen.SetActive(true);
         }
@@ -37,7 +39,14 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
+        animator.SetTrigger("isHurt");
         currentHealth -= amount;
         HealthSlider.value = currentHealth;
+        //ResetHurtAnimation();
+    }
+
+    public void ResetHurtAnimation()
+    {
+        animator.ResetTrigger("isHurt");
     }
 }

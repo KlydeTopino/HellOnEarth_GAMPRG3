@@ -17,8 +17,11 @@ public class MovementAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        animator.SetFloat("Horizontal", playerScript.MovementInput.x);
-        animator.SetFloat("Vertical", playerScript.MovementInput.y);
+        if(playerScript.MovementInput != Vector2.zero)
+        {
+            animator.SetFloat("X", playerScript.MovementInput.x);
+            animator.SetFloat("-X", playerScript.MovementInput.y);
+        }
         animator.SetFloat("Speed", playerScript.MovementInput.sqrMagnitude);
     }
 }
