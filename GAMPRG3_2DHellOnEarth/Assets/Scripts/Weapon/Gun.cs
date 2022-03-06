@@ -117,7 +117,6 @@ public class Gun : MonoBehaviour
 
         bulletsLeft--;
         bulletsShot--;
-        if(!infiniteAmmo) ammoLeft--;
 
         Invoke("ResetShot", timeBetweenShootingReduced);
 
@@ -139,6 +138,7 @@ public class Gun : MonoBehaviour
 
     private void ReloadFinished()
     {
+        if(!infiniteAmmo) ammoLeft -= (magazineSize - bulletsLeft);
         if(!infiniteAmmo && ammoLeft < magazineSize) bulletsLeft = ammoLeft;
         else bulletsLeft = magazineSize;
         reloading = false;
@@ -148,7 +148,8 @@ public class Gun : MonoBehaviour
 
     private void CheckUI()
     {
-        ammoDisplay.text = bulletsLeft.ToString();
+        if(bulletsPerTap > 1) ammoDisplay.text = ((bulletsLeft/bulletsPerTap).ToString() + "/" + ammoLeft/bulletsPerTap);
+        else ammoDisplay.text = (bulletsLeft.ToString() + "/" + ammoLeft);
         if (bulletsLeft <= magazineSize/10) reloadText.enabled = true;
         else reloadText.enabled = false;
         if(!infiniteAmmo && ammoLeft <= 0 && bulletsLeft <= 0) 

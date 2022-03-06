@@ -15,6 +15,7 @@ public class GunPickup : MonoBehaviour
     public Text reloadText;
     public Text pickUpText;
     public Text noAmmoText;
+    Transform gunPos;
 
     [Header("Settings")]
     public float pickupRange;
@@ -26,6 +27,7 @@ public class GunPickup : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
+        gunPos = player.Find("GunPos").transform;
         pickUpText = GameObject.Find("PickUp Gun").GetComponent<Text>();
         pickUpText.enabled = false;
         reloadText = GameObject.Find("ReloadText").GetComponent<Text>();
@@ -59,7 +61,7 @@ public class GunPickup : MonoBehaviour
         }
 
         if(equipped && Input.GetKeyDown(KeyCode.G)) Drop();
-        if(equipped) transform.position = player.position;
+        if(equipped) transform.position = gunPos.position;
     }
 
     private void Pickup()
@@ -75,6 +77,7 @@ public class GunPickup : MonoBehaviour
         pickUpText.enabled = false;
 
         gunScript.enabled = true;
+        gunScript.gameObject.tag="Current Gun";
     }
 
     private void Drop()
@@ -89,6 +92,7 @@ public class GunPickup : MonoBehaviour
         reloadText.enabled = false;
 
         gunScript.enabled = false;
+        gunScript.gameObject.tag="Untagged";
     }
     
     private void OnTriggerEnter2D(Collider2D collision)

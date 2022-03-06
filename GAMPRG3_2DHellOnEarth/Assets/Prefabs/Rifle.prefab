@@ -107,7 +107,7 @@ MonoBehaviour:
   stats: {fileID: 0}
   magazineSize: 30
   bulletsPerTap: 1
-  totalAmmo: 600
+  totalAmmo: 300
   spread: 0.02
   bulletSpeed: 2
   reloadTime: 2
@@ -141,7 +141,7 @@ MonoBehaviour:
   pickUpText: {fileID: 0}
   noAmmoText: {fileID: 0}
   pickupRange: 0.2
-  equipped: 1
+  equipped: 0
 --- !u!50 &8362695102259798659
 Rigidbody2D:
   serializedVersion: 4

@@ -107,7 +107,7 @@ MonoBehaviour:
   stats: {fileID: 0}
   magazineSize: 24
   bulletsPerTap: 6
-  totalAmmo: 480
+  totalAmmo: 240
   spread: 0.5
   bulletSpeed: 1.5
   reloadTime: 3

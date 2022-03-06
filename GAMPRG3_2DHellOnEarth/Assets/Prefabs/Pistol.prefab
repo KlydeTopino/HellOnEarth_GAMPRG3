@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 6168586287793246398}
   m_Layer: 0
   m_Name: Pistol
-  m_TagString: Untagged
+  m_TagString: Current Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,7 +171,7 @@ MonoBehaviour:
   pickUpText: {fileID: 0}
   noAmmoText: {fileID: 0}
   pickupRange: 0.2
-  equipped: 0
+  equipped: 1
 --- !u!50 &3361770644469806104
 Rigidbody2D:
   serializedVersion: 4
