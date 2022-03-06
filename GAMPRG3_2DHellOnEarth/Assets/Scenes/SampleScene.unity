@@ -565,7 +565,7 @@ MonoBehaviour:
     EnemyCounter: 5
     ObstacleCounter: 3
     EnemyTypes:
-    - {fileID: 8705141656642422106, guid: 843be301ab28492469271beb3045dbc6, type: 3}
+    - {fileID: 7716359235971455462, guid: abcc16e3307aafb4186110db39f77522, type: 3}
     ObjectTypes:
     - {fileID: 7123549738175439829, guid: dcd47b230763bd84398c75e8fc59648e, type: 3}
     SpawnInterval: 2
@@ -593,13 +593,12 @@ MonoBehaviour:
     ObjectTypes: []
     SpawnInterval: 1
   - WaveName: Wave 5
-    EnemyCounter: 5
+    EnemyCounter: 2
     ObstacleCounter: 0
     EnemyTypes:
-    - {fileID: 6325622459747181951, guid: ed9e0097650055d4f97e8bc11ef6bfe2, type: 3}
-    - {fileID: 7716359235971455462, guid: abcc16e3307aafb4186110db39f77522, type: 3}
+    - {fileID: 8358051897854886671, guid: d40cf6fe1d11f4e49867b47d9828cf28, type: 3}
     ObjectTypes: []
-    SpawnInterval: 2
+    SpawnInterval: 1
   - WaveName: Wave 6
     EnemyCounter: 10
     ObstacleCounter: 5
@@ -633,11 +632,10 @@ MonoBehaviour:
     - {fileID: 7123549738175439829, guid: dcd47b230763bd84398c75e8fc59648e, type: 3}
     SpawnInterval: 1
   - WaveName: Final Wave
-    EnemyCounter: 10
+    EnemyCounter: 2
     ObstacleCounter: 0
     EnemyTypes:
-    - {fileID: 6325622459747181951, guid: ed9e0097650055d4f97e8bc11ef6bfe2, type: 3}
-    - {fileID: 7716359235971455462, guid: abcc16e3307aafb4186110db39f77522, type: 3}
+    - {fileID: 6891121560283511719, guid: e0b521da119b0cf4481585bfea4f74f4, type: 3}
     ObjectTypes: []
     SpawnInterval: 2
   SpawnPoints:
@@ -18139,7 +18137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1925012089}
   m_Layer: 6
-  m_Name: GameObject
+  m_Name: GunPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
