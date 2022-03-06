@@ -52,21 +52,7 @@ public class Boss : MonoBehaviour
     }
 
     public void Attack()
-    {
-        /*if (isInAttackRange && player != null)
-        {
-            if (attackSpeed <= canAttack)
-            {
-                PlayerHealthScript.currentHealth -= baseAttack;
-                Debug.Log("Attack Player");
-                canAttack = 0f;
-            }
-            else
-            {
-                canAttack += Time.deltaTime;
-            }
-        }*/
-      
+    {     
        Vector3 pos = transform.position;
         pos += transform.right * attackOffset.x;
         pos += transform.up * attackOffset.y;
@@ -74,7 +60,6 @@ public class Boss : MonoBehaviour
         if (colInfo != null)
         {
             colInfo.GetComponent<PlayerHealth>().TakeDamage(baseAttack);
-            //PlayerHealthScript.currentHealth -= baseAttack;
         }
     }
 

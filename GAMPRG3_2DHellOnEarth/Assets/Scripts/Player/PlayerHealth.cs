@@ -21,6 +21,8 @@ public class PlayerHealth : MonoBehaviour
     public GameObject GameOverScreen;
     public GameObject HealthHud;
 
+    public bool isDead= false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,17 +57,12 @@ public class PlayerHealth : MonoBehaviour
     {
         animator.SetTrigger("isHurt");
         currentHealth -= amount;
-        //ResetHurtAnimation();
-    }
-
-    public void ResetHurtAnimation()
-    {
-        animator.ResetTrigger("isHurt");
     }
 
     public void Die()
     {
         animator.SetBool("isDead", true);
+        isDead = true;
         GetComponent<Collider2D>().enabled = false;
     }
 }

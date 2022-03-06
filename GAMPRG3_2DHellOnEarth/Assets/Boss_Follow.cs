@@ -12,12 +12,16 @@ public class Boss_Follow : StateMachineBehaviour
     public float attackRange = 3f;
 
     public Boss boss;
+
+    public PlayerHealth playerHealthScript;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = animator.GetComponent<Rigidbody2D>();
         boss = animator.GetComponent<Boss>();
+        playerHealthScript = player.GetComponent<PlayerHealth>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -27,7 +31,7 @@ public class Boss_Follow : StateMachineBehaviour
         Vector3 temp = Vector3.MoveTowards(rb.position, player.position, moveSpeed * Time.fixedDeltaTime);
         rb.MovePosition(temp);
 
-        if (Vector3.Distance(player.position, rb.position) <= attackRange)
+        if (playerHealthScript.isDead == false && Vector3.Distance(player.position, rb.position) <= attackRange)
         {
             animator.SetTrigger("Attack");
         }

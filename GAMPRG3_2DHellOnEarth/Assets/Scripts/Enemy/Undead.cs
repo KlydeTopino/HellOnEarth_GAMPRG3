@@ -63,7 +63,7 @@ public class Undead : Enemy
             undeadAnimator.SetBool("isMoving", false);
         }
 
-        if (isInAttackRange)
+        if (isInAttackRange && target != null)
         {
             if (attackSpeed <= canAttack)
             {
@@ -75,8 +75,7 @@ public class Undead : Enemy
             }
             else
             {
-                undeadAnimator.SetBool("withinRange", false);
-                //undeadAnimator.SetBool("isAttackOnCooldown", false);               
+                undeadAnimator.SetBool("withinRange", false);                      
                 canAttack += Time.deltaTime;
             }
         }
