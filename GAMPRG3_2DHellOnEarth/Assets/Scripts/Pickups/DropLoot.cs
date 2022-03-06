@@ -46,7 +46,10 @@ public class DropLoot : MonoBehaviour
         LootNum = Random.Range(0, LootTotal);
         if(RandomNum <= dropChance)
         {
+            if(!dropOnDestroy)
             Instantiate(lootTable[LootNum], player.position, transform.rotation);
+            else
+            Instantiate(lootTable[LootNum], transform.position, transform.rotation);
         }
         IsLooted = true;
     }
