@@ -613,7 +613,7 @@ MonoBehaviour:
     SpawnInterval: 1
   - WaveName: Wave 6
     EnemyCounter: 10
-    ObstacleCounter: 5
+    ObstacleCounter: 7
     LootBoxCounter: 0
     EnemyTypes:
     - {fileID: 8705141656642422106, guid: 843be301ab28492469271beb3045dbc6, type: 3}
@@ -623,7 +623,7 @@ MonoBehaviour:
     SpawnInterval: 2
   - WaveName: Wave 7
     EnemyCounter: 12
-    ObstacleCounter: 0
+    ObstacleCounter: 10
     LootBoxCounter: 0
     EnemyTypes:
     - {fileID: 6325622459747181951, guid: ed9e0097650055d4f97e8bc11ef6bfe2, type: 3}
@@ -642,7 +642,7 @@ MonoBehaviour:
     SpawnInterval: 2
   - WaveName: Wave 9
     EnemyCounter: 8
-    ObstacleCounter: 5
+    ObstacleCounter: 15
     LootBoxCounter: 0
     EnemyTypes:
     - {fileID: 6325622459747181951, guid: ed9e0097650055d4f97e8bc11ef6bfe2, type: 3}
