@@ -5,31 +5,49 @@ using UnityEngine;
 public class DropLoot : MonoBehaviour
 {
     public DestructibleItems item;
-    public int dropChance;
-    private int RandomNum;
     public List<GameObject> lootTable;
+    public Transform player;
+    public SpriteRenderer spriteRenderer;
+    public Sprite openedSprite;
+    public int dropChance;
+    public bool dropOnDestroy;
+    private int RandomNum;
+    
     private int LootNum;
     private int LootTotal;
-    private bool IsDestroyed = false;
+    private bool IsLooted = false;
     // Start is called before the first frame update
     void Start()
     {
         item = gameObject.GetComponent<DestructibleItems>();
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         LootTotal = lootTable.Count;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(item.itemHealth <= 0 && !IsDestroyed)
+        Vector2 distanceToPlayer = player.position - transform.position;
+        if(item.itemHealth <= 0 && !IsLooted && dropOnDestroy)
         {
-            RandomNum = Random.Range(0, 101);
-            LootNum = Random.Range(0, LootTotal);
-            if(RandomNum <= dropChance)
-            {
-                Instantiate(lootTable[LootNum], transform.position, transform.rotation);
-            }
-            IsDestroyed = true;
+            Drop();
         }
+        else if (distanceToPlayer.magnitude <= 0.2 && !dropOnDestroy && Input.GetKeyDown(KeyCode.E) && !IsLooted)
+        {
+            Drop();
+            spriteRenderer.sprite = openedSprite;
+        }
+    }
+
+    void Drop()
+    {
+        RandomNum = Random.Range(0, 101);
+        LootNum = Random.Range(0, LootTotal);
+        if(RandomNum <= dropChance)
+        {
+            Instantiate(lootTable[LootNum], transform.position, transform.rotation);
+        }
+        IsLooted = true;
     }
 }

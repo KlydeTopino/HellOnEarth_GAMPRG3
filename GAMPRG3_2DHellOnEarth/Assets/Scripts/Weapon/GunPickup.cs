@@ -25,19 +25,16 @@ public class GunPickup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindWithTag("Player").transform;
+        
         pickUpText.gameObject.SetActive(false);
         reloadText = gameObject.GetComponent<Gun>().reloadText;
-
-        player = GameObject.FindWithTag("Player").transform;
 
         if(!equipped)
         {
             gunScript.enabled = false;
             rb.isKinematic = false;
             coll.isTrigger = true;
-            bulletImage.enabled = false;
-            ammoDisplay.enabled = false;
-            reloadText.enabled = false;
         }
 
         if(equipped)

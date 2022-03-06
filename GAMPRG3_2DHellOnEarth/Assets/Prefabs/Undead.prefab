@@ -149,7 +149,7 @@ MonoBehaviour:
   health: 100
   enemyName: Undead
   baseAttack: 1
-  moveSpeed: 0.1
+  moveSpeed: 0.15
   target: {fileID: 0}
   chaseRadius: 3
   attackRadius: 0.1

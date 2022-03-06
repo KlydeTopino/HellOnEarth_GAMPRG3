@@ -86,7 +86,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -130,19 +130,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 800986f85bd1cc3488be1dc3432732d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magazineSize: 10
-  bulletsPerTap: 1
   shotPos: {fileID: 352143961392955872}
   bullet: {fileID: 9097134232352499853, guid: f1bb037865a914c4d9ee7904e1f8a3d2, type: 3}
+  gunSprite: {fileID: 0}
+  player: {fileID: 0}
+  stats: {fileID: 0}
+  magazineSize: 10
+  bulletsPerTap: 1
   spread: 0
   bulletSpeed: 2
   reloadTime: 2
   timeBetweenShots: 0
   timeBetweenShooting: 0.5
   allowAutoFire: 0
-  AmmoDisplay: {fileID: 0}
-  ReloadText: {fileID: 0}
-  ReloadingText: {fileID: 0}
+  ammoDisplay: {fileID: 0}
+  reloadText: {fileID: 0}
+  reloadingText: {fileID: 0}
 --- !u!114 &1063613050889625344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,9 +163,11 @@ MonoBehaviour:
   coll: {fileID: 6168586287793246398}
   player: {fileID: 4969929711938934876, guid: ab7d73fabe0a333418d770362ba04a7a, type: 3}
   bulletImage: {fileID: 0}
+  ammoDisplay: {fileID: 0}
+  reloadText: {fileID: 0}
   pickupRange: 0.2
   dropForce: 0
-  equipped: 1
+  equipped: 0
   pickUpText: {fileID: 0}
 --- !u!50 &3361770644469806104
 Rigidbody2D:
