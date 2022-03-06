@@ -367,7 +367,7 @@ MonoBehaviour:
   upgradeDescription: Reduces time required to reload
   upgradeID: 
   sprite: {fileID: 21300000, guid: 370dc4ba9029dcb46b643099e1a7a240, type: 3}
-  stats: {fileID: 0}
+  stats: {fileID: 1795253023}
   timeReduce: 1.5
 --- !u!114 &78120585
 MonoBehaviour:
@@ -4022,7 +4022,7 @@ MonoBehaviour:
   upgradeDescription: Increases player's max health by 50
   upgradeID: 
   sprite: {fileID: 21300000, guid: 0488b4c956aac2741b50d0f2ebded381, type: 3}
-  health: {fileID: 0}
+  health: {fileID: 1795253025}
   healthBar: {fileID: 900833544}
   healthUpgrade: 50
 --- !u!114 &500809705
@@ -4678,7 +4678,7 @@ MonoBehaviour:
   upgradeDescription: Decreases delay between each bullet shot
   upgradeID: 
   sprite: {fileID: 21300000, guid: c42469217787b0847bad2e9885d44c6c, type: 3}
-  stats: {fileID: 0}
+  stats: {fileID: 1795253023}
   timeReduction: 0.05
 --- !u!114 &552816206
 MonoBehaviour:
@@ -5263,7 +5263,7 @@ MonoBehaviour:
   upgradeDescription: Increases number of bullets shot at a time
   upgradeID: 
   sprite: {fileID: 21300000, guid: b3f95eb8f7b69214abbb1891117c7c60, type: 3}
-  stats: {fileID: 0}
+  stats: {fileID: 1795253023}
   bulletCountIncrease: 1
 --- !u!114 &711748152
 MonoBehaviour:
@@ -7416,7 +7416,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1063613050889625344, guid: c194cb92d36e7984fae32a832fe38c75, type: 3}
       propertyPath: equipped
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1063613050889625344, guid: c194cb92d36e7984fae32a832fe38c75, type: 3}
       propertyPath: ReloadText
@@ -7822,7 +7822,7 @@ MonoBehaviour:
   upgradeDescription: Increases accuracy of each shot
   upgradeID: 
   sprite: {fileID: 21300000, guid: 80d788b533ddb094085a2df826fdb3fe, type: 3}
-  stats: {fileID: 0}
+  stats: {fileID: 1795253023}
   spreadReduceUpgrade: 0.01
 --- !u!114 &1475252706
 MonoBehaviour:
@@ -8271,7 +8271,7 @@ MonoBehaviour:
   upgradeDescription: Increases player's movement speed
   upgradeID: 
   sprite: {fileID: 21300000, guid: eb278bbe168689344bb129d0e6faea7c, type: 3}
-  player: {fileID: 0}
+  player: {fileID: 1795253029}
   speedIncrease: 0.3
 --- !u!114 &1659420157
 MonoBehaviour:
@@ -15597,6 +15597,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1745488bf88e5014b8817ec9235979b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1795253025 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5963351597121021674, guid: 6d9120ee71ac4d14fa552bc5e00bf44e, type: 3}
+  m_PrefabInstance: {fileID: 1385743176}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795253022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857921491cb36db428941c3dbde9ca00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1795253029 stripped
