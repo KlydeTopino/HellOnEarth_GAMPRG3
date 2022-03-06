@@ -33,7 +33,7 @@ public class DropLoot : MonoBehaviour
         {
             Drop();
         }
-        else if (distanceToPlayer.magnitude <= 0.2 && !dropOnDestroy && Input.GetKeyDown(KeyCode.E) && !IsLooted && item.!isDestroyed)
+        else if (distanceToPlayer.magnitude <= 0.2 && !dropOnDestroy && Input.GetKeyDown(KeyCode.E) && !IsLooted && !item.isDestroyed)
         {
             Drop();
             spriteRenderer.sprite = openedSprite;
@@ -46,7 +46,7 @@ public class DropLoot : MonoBehaviour
         LootNum = Random.Range(0, LootTotal);
         if(RandomNum <= dropChance)
         {
-            Instantiate(lootTable[LootNum], transform.position, transform.rotation);
+            Instantiate(lootTable[LootNum], player.position, transform.rotation);
         }
         IsLooted = true;
     }
