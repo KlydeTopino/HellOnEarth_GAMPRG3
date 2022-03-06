@@ -7,7 +7,9 @@ public class Wave
 {
     public string WaveName;
     public int EnemyCounter;
+    public int ObstacleCounter;
     public GameObject[] EnemyTypes;
+    public GameObject[] ObjectTypes;
     public float SpawnInterval;
 }
 
@@ -15,13 +17,16 @@ public class WaveSpawner : MonoBehaviour
 {
     [SerializeField] public Wave[] WavesNumber;
     public Transform[] SpawnPoints;
+    public Transform[] ObstacleSpawnPoints;
     public Animator WaveAnimator;
     public Text WaveName;
     public GameObject UpgradesUI;
     public UpgradeOptionManager UpgradeOptions;
+    
     public int[] UpgradeWaves;
     public int[] LightSwtichOff;
     public int[] LightSwtichOn;
+    public int[] RandomObstacle;
 
     private Wave CurrentWave;
     private int CurrentWaveNumber;
@@ -76,6 +81,15 @@ public class WaveSpawner : MonoBehaviour
                              }
                           
                         }
+                        foreach (int WaveNum in RandomObstacle)
+                        {
+                            if (WaveNum == CurrentWaveNumber + 1)
+                            {
+                                SpawnObstacle();
+                            }
+
+                        }
+
                         Debug.Log("Current Wave: " + CurrentWaveNumber);
                         WaveAnimator.SetTrigger("WaveComplete");
                         if(ChoosingUpgrades) ShowUpgrades();
@@ -118,6 +132,16 @@ public class WaveSpawner : MonoBehaviour
                 WillAnimate = true;
             }
         }
+    }
+
+    void SpawnObstacle()
+    {
+        GameObject RandomObstacle = CurrentWave.ObjectTypes[Random.Range(0, CurrentWave.ObjectTypes.Length)];
+        Transform RandomObstacleSpawnPoint = ObstacleSpawnPoints[Random.Range(0, ObstacleSpawnPoints.Length)];
+
+        Instantiate(RandomObstacle, RandomObstacleSpawnPoint.position, Quaternion.identity);
+        CurrentWave.ObstacleCounter--;
+
     }
     
     void ShowUpgrades()
