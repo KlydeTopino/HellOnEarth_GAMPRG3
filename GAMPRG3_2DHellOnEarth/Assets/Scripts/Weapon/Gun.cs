@@ -91,7 +91,7 @@ public class Gun : MonoBehaviour
 
         if (bulletsLeft < magazineSize && !reloading && !IsReloading)
         {
-            if (Input.GetKeyDown(KeyCode.R) && infiniteAmmo||ammoLeft > 0)
+            if (Input.GetKeyDown(KeyCode.R) && (infiniteAmmo||ammoLeft > 0))
             {
                 Reload();
             }
