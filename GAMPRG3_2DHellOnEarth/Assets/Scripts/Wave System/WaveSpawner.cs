@@ -35,6 +35,9 @@ public class WaveSpawner : MonoBehaviour
     public GameObject Light;
     private bool On = false;
 
+    public GameObject TheEnd;
+    public GameObject HealthHud;
+
     private void Update()
     {
         CurrentWave = WavesNumber[CurrentWaveNumber];
@@ -83,13 +86,11 @@ public class WaveSpawner : MonoBehaviour
                 else
                 {
                     Debug.Log("GameFinish");
+                    TheEnd.SetActive(true);
+                    HealthHud.SetActive(false);
                 }
-
-
             }
-        }
-        
-
+        }   
     }
 
     void SpawnNextWave()

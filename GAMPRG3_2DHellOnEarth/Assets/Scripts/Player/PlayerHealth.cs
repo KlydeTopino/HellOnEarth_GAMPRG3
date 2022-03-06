@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
     public HealthBar healthBar;
 
     public GameObject GameOverScreen;
+    public GameObject HealthHud;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,7 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             GameOverScreen.SetActive(true);
+            HealthHud.SetActive(false);
         }
     }
 
