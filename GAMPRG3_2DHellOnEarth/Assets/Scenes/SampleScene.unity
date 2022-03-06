@@ -8327,6 +8327,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1046489149}
     - target: {fileID: 5963351597121021674, guid: 6d9120ee71ac4d14fa552bc5e00bf44e, type: 3}
+      propertyPath: gunScript
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963351597121021674, guid: 6d9120ee71ac4d14fa552bc5e00bf44e, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 900833544}

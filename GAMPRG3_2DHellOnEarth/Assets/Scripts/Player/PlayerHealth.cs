@@ -27,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         player = gameObject.GetComponent<PlayerScript>();
-        gunScript = GameObject.FindWithTag("CurrentGun").GetComponent<Gun>();
+        gunScript = GameObject.FindWithTag("Current Gun").GetComponent<Gun>();
     }
 
     // Update is called once per frame
