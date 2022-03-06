@@ -36,6 +36,7 @@ public class Gun : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        stats = player.GetComponent<PlayerStats>();
         ammoDisplay = GameObject.Find("BulletCount").GetComponent<Text>();
         reloadText = GameObject.Find("ReloadText").GetComponent<Text>();
         reloadingText = GameObject.Find("ReloadingText").GetComponent<Text>();
@@ -45,11 +46,6 @@ public class Gun : MonoBehaviour
         ammoLeft = totalAmmo;
         bulletsLeft = magazineSize;
         readyToShoot = true;
-    }
-
-    void Awake()
-    {
-        stats = player.GetComponent<PlayerStats>();
     }
 
     void UpdateStats()

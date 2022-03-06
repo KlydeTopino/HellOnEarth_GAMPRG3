@@ -565,7 +565,7 @@ MonoBehaviour:
     EnemyCounter: 5
     ObstacleCounter: 3
     EnemyTypes:
-    - {fileID: 7716359235971455462, guid: abcc16e3307aafb4186110db39f77522, type: 3}
+    - {fileID: 8705141656642422106, guid: 843be301ab28492469271beb3045dbc6, type: 3}
     ObjectTypes:
     - {fileID: 7123549738175439829, guid: dcd47b230763bd84398c75e8fc59648e, type: 3}
     SpawnInterval: 2
@@ -667,7 +667,7 @@ MonoBehaviour:
   UpgradeWaves: 0300000005000000
   LightSwtichOff: 0300000004000000070000000800000009000000
   LightSwtichOn: 0500000006000000
-  RandomObstacle: 00000000020000000500000008000000
+  RandomObstacle: 01000000030000000600000009000000
   ChoosingUpgrades: 0
   Light: {fileID: 1063977709}
   TheEnd: {fileID: 305788814}
@@ -680,7 +680,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 126927004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.37134463, y: -0.16312867, z: -27.810642}
+  m_LocalPosition: {x: -0.37134463, y: -0.16312867, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2078769369}
@@ -8797,7 +8797,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1324604072
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
-
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,7 +18,8 @@ public class WaveSpawner : MonoBehaviour
 {
     [SerializeField] public Wave[] WavesNumber;
     public Transform[] SpawnPoints;
-    public Transform[] ObstacleSpawnPoints;
+    public List<Transform> ObstacleSpawnPoints;
+    private List<Transform> TempObstacleSpawnPoints;
     public Animator WaveAnimator;
     public Text WaveName;
     public GameObject UpgradesUI;
@@ -48,6 +50,7 @@ public class WaveSpawner : MonoBehaviour
         CurrentWave = WavesNumber[CurrentWaveNumber];
         if(!ChoosingUpgrades)
         {
+            TempObstacleSpawnPoints = new List<Transform>(ObstacleSpawnPoints);
             SpawnWave();
             GameObject[] totalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
             if (totalEnemies.Length == 0)
@@ -85,6 +88,7 @@ public class WaveSpawner : MonoBehaviour
                         {
                             if (WaveNum == CurrentWaveNumber + 1)
                             {
+                                for (int i = CurrentWave.ObstacleCounter; CurrentWave.ObstacleCounter > 0; CurrentWave.ObstacleCounter--)
                                 SpawnObstacle();
                             }
 
@@ -137,10 +141,10 @@ public class WaveSpawner : MonoBehaviour
     void SpawnObstacle()
     {
         GameObject RandomObstacle = CurrentWave.ObjectTypes[Random.Range(0, CurrentWave.ObjectTypes.Length)];
-        Transform RandomObstacleSpawnPoint = ObstacleSpawnPoints[Random.Range(0, ObstacleSpawnPoints.Length)];
+        int RandomObstacleSpawnPoint = Random.Range(0, TempObstacleSpawnPoints.Count);
 
-        Instantiate(RandomObstacle, RandomObstacleSpawnPoint.position, Quaternion.identity);
-        CurrentWave.ObstacleCounter--;
+        Instantiate(RandomObstacle, TempObstacleSpawnPoints[RandomObstacleSpawnPoint].position, Quaternion.identity);
+        TempObstacleSpawnPoints.RemoveAt(RandomObstacleSpawnPoint);
 
     }
     

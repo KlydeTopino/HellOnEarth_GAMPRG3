@@ -30,8 +30,10 @@ public class GunPickup : MonoBehaviour
         gunPos = player.Find("GunPos").transform;
         pickUpText = GameObject.Find("PickUp Gun").GetComponent<Text>();
         pickUpText.enabled = false;
+        ammoDisplay = GameObject.Find("BulletCount").GetComponent<Text>();
         reloadText = GameObject.Find("ReloadText").GetComponent<Text>();
         noAmmoText = GameObject.Find("NoAmmoText").GetComponent<Text>();
+        bulletImage = GameObject.Find("BulletImage").GetComponent<Image>();
 
         if(!equipped)
         {
@@ -73,7 +75,6 @@ public class GunPickup : MonoBehaviour
         coll.isTrigger = true;
         bulletImage.enabled = true;
         ammoDisplay.enabled = true;
-        reloadText.enabled = true;
         pickUpText.enabled = false;
 
         gunScript.enabled = true;
