@@ -38,11 +38,11 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            animator.SetTrigger("isDead");
             GameOverScreen.SetActive(true);
             HealthHud.SetActive(false);
             player.enabled = false;
             gunScript.enabled = false;
-            animator.SetTrigger("isDead");
         }
 
         HealthSlider.value = currentHealth;
