@@ -21,6 +21,7 @@ public class WaveSpawner : MonoBehaviour
     public UpgradeOptionManager UpgradeOptions;
     public int[] UpgradeWaves;
     public int[] LightSwtichOff;
+    public int[] LightSwtichOn;
 
     private Wave CurrentWave;
     private int CurrentWaveNumber;
@@ -56,12 +57,21 @@ public class WaveSpawner : MonoBehaviour
                                 ChoosingUpgrades = true;
                             }
                         }
-                        foreach(int WaveNum in LightSwtichOff)
+                        foreach (int WaveNum in LightSwtichOff)
                         {
-                            if(WaveNum == CurrentWaveNumber + 1 && !On)
+                            if (WaveNum == CurrentWaveNumber + 1 && !On)
                             {
                                 Light.SetActive(false);
+
                             }
+                        }
+                        foreach (int WaveNum in LightSwtichOn)
+                         {
+                            if (WaveNum == CurrentWaveNumber + 1 && !On)
+                             {
+                               Light.SetActive(true);
+                             }
+                          
                         }
                         Debug.Log("Current Wave: " + CurrentWaveNumber);
                         WaveAnimator.SetTrigger("WaveComplete");

@@ -597,6 +597,7 @@ MonoBehaviour:
   UpgradeOptions: {fileID: 1325720476}
   UpgradeWaves: 0300000005000000
   LightSwtichOff: 0300000004000000070000000800000009000000
+  LightSwtichOn: 0500000006000000
   ChoosingUpgrades: 0
   Light: {fileID: 1063977709}
 --- !u!4 &126927006
