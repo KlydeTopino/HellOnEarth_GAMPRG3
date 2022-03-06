@@ -137,15 +137,18 @@ MonoBehaviour:
   stats: {fileID: 0}
   magazineSize: 10
   bulletsPerTap: 1
+  totalAmmo: 0
   spread: 0
   bulletSpeed: 2
   reloadTime: 2
   timeBetweenShots: 0
   timeBetweenShooting: 0.5
   allowAutoFire: 0
+  infiniteAmmo: 1
   ammoDisplay: {fileID: 0}
   reloadText: {fileID: 0}
   reloadingText: {fileID: 0}
+  noAmmoText: {fileID: 0}
 --- !u!114 &1063613050889625344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,10 +168,10 @@ MonoBehaviour:
   bulletImage: {fileID: 0}
   ammoDisplay: {fileID: 0}
   reloadText: {fileID: 0}
-  pickupRange: 0.2
-  dropForce: 0
-  equipped: 0
   pickUpText: {fileID: 0}
+  noAmmoText: {fileID: 0}
+  pickupRange: 0.2
+  equipped: 0
 --- !u!50 &3361770644469806104
 Rigidbody2D:
   serializedVersion: 4

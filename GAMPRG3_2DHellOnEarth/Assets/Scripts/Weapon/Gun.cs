@@ -13,28 +13,36 @@ public class Gun : MonoBehaviour
     public PlayerStats stats;
 
     [Header("Gun Stats")]
-    public int magazineSize, bulletsPerTap;
+    public int magazineSize, bulletsPerTap, totalAmmo;
     private float Offset = -90;
     public float spread, bulletSpeed, reloadTime, timeBetweenShots, timeBetweenShooting;
     int bulletsLeft, bulletsShot;
 
     bool shooting, readyToShoot, reloading, IsReloading;
-    public bool allowAutoFire;
+    public bool allowAutoFire, infiniteAmmo;
 
     [Header("Gun Upgrades")]
-    int bulletsPerTapIncreased;
+    int bulletsPerTapIncreased, ammoLeft;
     float timeBetweenShootingReduced, spreadReduced, reloadTimeReduced;
 
     [Header("UI")]
     public Text ammoDisplay;
     public Text reloadText;
     public Text reloadingText;
+    public Text noAmmoText;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindWithTag("Player");
+        ammoDisplay = GameObject.Find("BulletCount").GetComponent<Text>();
+        reloadText = GameObject.Find("ReloadText").GetComponent<Text>();
+        reloadingText = GameObject.Find("ReloadingText").GetComponent<Text>();
+        noAmmoText = GameObject.Find("NoAmmoText").GetComponent<Text>();
+
         gunSprite = gameObject.GetComponent<SpriteRenderer>();
+        ammoLeft = totalAmmo;
         bulletsLeft = magazineSize;
         readyToShoot = true;
     }
@@ -83,7 +91,7 @@ public class Gun : MonoBehaviour
 
         if (bulletsLeft < magazineSize && !reloading && !IsReloading)
         {
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.R) && infiniteAmmo||ammoLeft > 0)
             {
                 Reload();
             }
@@ -93,14 +101,6 @@ public class Gun : MonoBehaviour
         {
             bulletsShot = bulletsPerTapIncreased;
             Shoot();
-        }
-        if (bulletsLeft <= magazineSize/10)
-        {
-            reloadText.gameObject.SetActive(true);
-        }
-        else
-        {
-            reloadText.gameObject.SetActive(false);
         }
     }
 
@@ -117,6 +117,7 @@ public class Gun : MonoBehaviour
 
         bulletsLeft--;
         bulletsShot--;
+        if(!infiniteAmmo) ammoLeft--;
 
         Invoke("ResetShot", timeBetweenShootingReduced);
 
@@ -132,21 +133,34 @@ public class Gun : MonoBehaviour
     private void Reload ()
     {
         reloading = true;
-        reloadingText.gameObject.SetActive(true);
+        reloadingText.enabled = true;
         Invoke("ReloadFinished", reloadTimeReduced);
     }
 
     private void ReloadFinished()
     {
-        bulletsLeft = magazineSize;
+        if(!infiniteAmmo && ammoLeft < magazineSize) bulletsLeft = ammoLeft;
+        else bulletsLeft = magazineSize;
         reloading = false;
-        reloadText.gameObject.SetActive(false);
-        reloadingText.gameObject.SetActive(false);
+        reloadText.enabled = false;
+        reloadingText.enabled = false;
     }
 
     private void CheckUI()
     {
         ammoDisplay.text = bulletsLeft.ToString();
+        if (bulletsLeft <= magazineSize/10) reloadText.enabled = true;
+        else reloadText.enabled = false;
+        if(!infiniteAmmo && ammoLeft <= 0 && bulletsLeft <= 0) 
+        {
+            noAmmoText.enabled = true;
+            reloadText.enabled = false;
+        }
+    }
+
+    public void RefillAmmo()
+    {
+        ammoLeft = totalAmmo;
     }
     
 }

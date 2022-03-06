@@ -37,13 +37,14 @@ public class PlayerHealth : MonoBehaviour
             GameOverScreen.SetActive(true);
             HealthHud.SetActive(false);
         }
+
+        HealthSlider.value = currentHealth;
     }
 
     public void TakeDamage(float amount)
     {
         animator.SetTrigger("isHurt");
         currentHealth -= amount;
-        HealthSlider.value = currentHealth;
         //ResetHurtAnimation();
     }
 
