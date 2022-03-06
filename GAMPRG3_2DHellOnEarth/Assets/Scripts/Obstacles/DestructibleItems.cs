@@ -7,6 +7,7 @@ public class DestructibleItems : MonoBehaviour
     public int itemHealth;
     public SpriteRenderer spriteRenderer;
     public Sprite destroyedSprite;
+    public bool isDestroyed;
 
     void Start()
     {
@@ -24,11 +25,8 @@ public class DestructibleItems : MonoBehaviour
 
     private void Die()
     {
+        isDestroyed = true;
         Destroy(GetComponent<Collider2D>());
         spriteRenderer.sprite = destroyedSprite;
-    }
-    void Update()
-    {
-        
     }
 }
