@@ -602,7 +602,7 @@ MonoBehaviour:
     LootTypes: []
     SpawnInterval: 1
   - WaveName: Wave 5
-    EnemyCounter: 2
+    EnemyCounter: 1
     ObstacleCounter: 0
     LootBoxCounter: 1
     EnemyTypes:
@@ -656,7 +656,7 @@ MonoBehaviour:
     ObstacleCounter: 0
     LootBoxCounter: 0
     EnemyTypes:
-    - {fileID: 6891121560283511719, guid: e0b521da119b0cf4481585bfea4f74f4, type: 3}
+    - {fileID: 8358051897854886671, guid: d40cf6fe1d11f4e49867b47d9828cf28, type: 3}
     ObjectTypes: []
     LootTypes: []
     SpawnInterval: 2
