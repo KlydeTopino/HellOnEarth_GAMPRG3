@@ -21,7 +21,6 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] public Wave[] WavesNumber;
     public Transform[] SpawnPoints;
     public List<Transform> LootSpawnPoints;
-    private List<Transform> TempLootSpawnPoints;
     public List<Transform> ObstacleSpawnPoints;
     private List<Transform> TempObstacleSpawnPoints;
     public Animator WaveAnimator;
@@ -33,7 +32,7 @@ public class WaveSpawner : MonoBehaviour
     public int[] LightSwtichOff;
     public int[] LightSwtichOn;
     public int[] RandomObstacle;
-    public int[] LootBox;
+    public int[] LootBoxWave;
 
     private Wave CurrentWave;
     private int CurrentWaveNumber;
@@ -99,12 +98,11 @@ public class WaveSpawner : MonoBehaviour
 
                         }
 
-                        foreach (int WaveNum in LootBox)
+                        foreach (int WaveNum in LootBoxWave)
                         {
                             if (WaveNum == CurrentWaveNumber + 1)
                             {
-                                for (int i = CurrentWave.LootBoxCounter; CurrentWave.LootBoxCounter > 0; CurrentWave.LootBoxCounter--)
-                                    SpawnLootBox();
+                                SpawnLootBox();
                             }
 
                         }
@@ -165,11 +163,10 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnLootBox()
     {
-        GameObject RandomLootBox = CurrentWave.LootTypes[Random.Range(0, CurrentWave.LootTypes.Length)];
-        int RandomLootSpawnPoint = Random.Range(0, TempLootSpawnPoints.Count);
+        GameObject GunBox = CurrentWave.LootTypes[Random.Range(0, CurrentWave.LootTypes.Length)];
+        int RandomLootSpawnPoint = Random.Range(0, LootSpawnPoints.Count);
 
-        Instantiate(RandomLootBox, TempLootSpawnPoints[RandomLootSpawnPoint].position, Quaternion.identity);
-        TempLootSpawnPoints.RemoveAt(RandomLootSpawnPoint);
+        Instantiate(GunBox, LootSpawnPoints[RandomLootSpawnPoint].position, Quaternion.identity);
     }
 
 
