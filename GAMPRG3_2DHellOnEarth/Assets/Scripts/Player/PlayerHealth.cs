@@ -12,6 +12,8 @@ public class PlayerHealth : MonoBehaviour
     public PlayerScript player;
     public Gun gunScript;
 
+    public float waitTime = 2f;
+
     public Slider HealthSlider;
 
     public HealthBar healthBar;
@@ -38,7 +40,8 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            animator.SetTrigger("isDead");
+            Die();
+            //animator.SetTrigger("isDead");
             GameOverScreen.SetActive(true);
             HealthHud.SetActive(false);
             player.enabled = false;
@@ -58,5 +61,11 @@ public class PlayerHealth : MonoBehaviour
     public void ResetHurtAnimation()
     {
         animator.ResetTrigger("isHurt");
+    }
+
+    public void Die()
+    {
+        animator.SetBool("isDead", true);
+        GetComponent<Collider2D>().enabled = false;
     }
 }
