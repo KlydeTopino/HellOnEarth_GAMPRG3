@@ -9,6 +9,8 @@ public class PlayerHealth : MonoBehaviour
 
     public float maxHealth;
     public float currentHealth;
+    public PlayerScript player;
+    public Gun gunScript;
 
     public Slider HealthSlider;
 
@@ -22,6 +24,8 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        player = gameObject.GetComponent<PlayerScript>();
+        gunScript = GameObject.FindWithTag("CurrentGun").GetComponent<Gun>();
     }
 
     // Update is called once per frame
@@ -36,6 +40,9 @@ public class PlayerHealth : MonoBehaviour
         {
             GameOverScreen.SetActive(true);
             HealthHud.SetActive(false);
+            player.enabled = false;
+            gunScript.enabled = false;
+            animator.SetTrigger("isDead");
         }
 
         HealthSlider.value = currentHealth;
